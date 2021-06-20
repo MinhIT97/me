@@ -19,3 +19,22 @@ a {
   margin-top: auto;
   margin-bottom: auto;
 }
+.slick-prev, .slick-next {
+ 
+color: black !important; 
+
+}
+.slick-prev{
+  left: 10px !important;
+}
+.slick-next{
+  
+  right: 10px !important
+}
+.slick-next:before {
+  content: '' !important;
+}
+
+.slick-prev:before {
+  content: '' !important;
+}
