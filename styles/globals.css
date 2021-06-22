@@ -15,22 +15,29 @@ a {
 * {
   box-sizing: border-box;
 }
-.wd-center{
+
+.wd-center {
   margin-top: auto;
   margin-bottom: auto;
 }
-.slick-prev, .slick-next {
- 
-color: black !important; 
+
+.slick-prev,
+.slick-next {
+
+  color: black !important;
+  z-index: 100;
 
 }
-.slick-prev{
+
+.slick-prev {
   left: 10px !important;
 }
-.slick-next{
-  
+
+.slick-next {
+
   right: 10px !important
 }
+
 .slick-next:before {
   content: '' !important;
 }
