@@ -71,16 +71,15 @@ function MyProject() {
         ]
     };
     return (
-        <div id="project" className=" h-screen relative mt-36">
-            <div className="m-auto ">
+        <section  className=" relative  m-auto ">
+            <div >
                 <div className="md:text-5xl text-2xl font-bold text-center">
                     My Projects
                 </div>
                 <div className="text-center mt-4 md:text-xl text-base  text-gray-600">
                     Here are some interesting points in my projects...
                 </div>
-
-                <div className=" w-full m-auto">
+                <div className=" w-1/2 m-auto">
                     <Slider {...settings}>
                         <div className="p-4 focus:outline-none">
                             <img className="w-full h-auto" src="../Selection_038.png" alt="" />
@@ -103,7 +102,7 @@ function MyProject() {
                 </div>
             </div>
 
-        </div>
+        </section>
     )
 }
 

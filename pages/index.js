@@ -5,7 +5,8 @@ import MyProject from '../component/MyProject';
 import CoppyRight from '../component/copyright';
 import Service from '../component/Services';
 import Contact from '../component/Contact';
-
+import ReactPageScroller from "react-page-scroller";
+import Me from '../component/Me';
 
 export default function Home() {
   return (
@@ -20,33 +21,16 @@ export default function Home() {
         <CoppyRight />
       </div>
 
-      <main className="max-w-screen-lg mx-auto">
+      <main>
+        <ReactPageScroller containerHeight="100vh"  animationTimer={500} forwardRef={c => this.reactPageScroller = c}>
+          <Me />
+          <MyProject />
+          <Service />
+          <Contact />
 
-        <div className="md:grid md:grid-flow-col md:grid-cols-2 grid:gap-4 mt-16 ">
-          <div className="sm:col-span-1 m-auto ">
-            <div className="md:text-5xl text-2xl font-bold ">
-              <div>
-                Hello I'm Here.
-              </div>
-              <div>
-                A web developer
-              </div>
-            </div>
-            <div className="mt-4 md:text-xl text-base  text-gray-600">
-              <p>
-                I will help you build a website, app, or 2D motion. I deploy excellence agile product teams on demand.
-              </p>
-            </div>
-          </div>
-          <div className="m-auto">
-            <img src="../Group 1.png" />
-          </div>
-        </div>
+        </ReactPageScroller>
 
-        
-        <MyProject />
-        <Service />
-        <Contact/>
+
       </main>
 
 

@@ -1,11 +1,11 @@
 function Contact() {
     return (
-        <div className="h-screen  m-auto">
+        <div className="h-screen  m-auto md:w-3/6 p-3" >
 
-            <div className="text-center text-5xl font-bold">
+            <div className="md:text-5xl text-xl font-bold text-center">
                 Are you ready to work together?
             </div>
-            <div className="text-center mt-4 text-xl  text-gray-600">
+            <div className=" mt-4 md:text-lg text-base text-justify  text-gray-600">
                 I’m always interested in hearing about new projects and opportunities. You can tell me about the problems you are trying to solve. I'd love to listen and see if there's anything I can do to help you.
             </div>
 

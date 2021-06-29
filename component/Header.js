@@ -102,7 +102,7 @@ function classNames(...classes) {
 
 export default function Example() {
     return (
-        <div className="fixed z-10 w-full top-0">
+        <div className="fixed z-10 w-full top-0 p-3 md:p-0" >
 
             <Popover className="relative ">
                 {({ open }) => (
@@ -123,7 +123,7 @@ export default function Example() {
                                 </div>
                                 <Popover.Group as="nav" className="hidden md:flex space-x-10">
                                     <a
-                                        href="#"
+                                        href="#Home"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
                                         <b>Home</b>
@@ -141,7 +141,7 @@ export default function Example() {
                                         Services
                                     </a>
                                     <a
-                                        href="#"
+                                        href="#contacts"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
                                         Contacts
