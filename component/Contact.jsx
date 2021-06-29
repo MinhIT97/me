@@ -29,8 +29,10 @@ function Contact() {
                     <textarea placeholder="Messenger" name="messgae" rows="5" className="focus:ring-indigo-500 focus:border-indigo-500 block w-full pl-7 pr-12 sm:text-sm border-gray-300 ">
 
                     </textarea>
-
+                    <button className="nline-flex items-center w-full justify-center px-5 py-3 border border-transparent text-base font-medium  text-white bg-indigo-600 hover:bg-indigo-700"> Send message</button>
                 </div>
+
+                
             </form>
         </div>
 
