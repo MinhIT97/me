@@ -8,6 +8,8 @@ import Contact from '../component/Contact';
 import ReactPageScroller from "react-page-scroller";
 import Me from '../component/Me';
 
+import styles from "../styles/Home.module.scss";
+
 export default function Home() {
   return (
     <div >
@@ -21,16 +23,16 @@ export default function Home() {
         <CoppyRight />
       </div>
 
-      <main>
-        <ReactPageScroller containerHeight="100vh"  animationTimer={500} forwardRef={c => this.reactPageScroller = c}>
+      <main className={styles.test}>
+        <ReactPageScroller containerHeight="100vh"   animationTimer={500} forwardRef={c => this.reactPageScroller = c}>
           <Me />
           <MyProject />
           <Service />
           <Contact />
 
         </ReactPageScroller>
-
-
+        
+        
       </main>
 
 
