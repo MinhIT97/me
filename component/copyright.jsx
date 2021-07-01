@@ -20,11 +20,11 @@ function CoppyRight() {
                     <li>
                         <a href="https://www.facebook.com/profile.php?id=100037561217322" target="_blank" title="Kết nối với tôi bằng Facebook"><FacebookIcon /></a>
                     </li>
-                    <li><TelegramIcon /> </li>
+                    <li> <a href=""> <TelegramIcon /></a>  </li>
                     <li> <a href="https://wa.me/0986082324" target="_blank" title="Kết nối với tôi bằng Whatsapp">
                         <WhatsAppIcon />
                     </a>
-                    </li>
+                    </li> 
                     <li title="minh0608197@gmail.com">
                     <EmailIcon />
                     </li>

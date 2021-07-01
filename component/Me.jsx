@@ -1,6 +1,6 @@
 function Me() {
     return (
-        <section className="relative">
+        <section className="relative ">
             <div className="md:grid md:grid-flow-col md:grid-cols-2 md:w-3/4 p-3 m-auto grid:gap-4 mt-16 " >
                 <div className="sm:col-span-1 m-auto ">
                     <div className="md:text-5xl text-2xl font-bold ">

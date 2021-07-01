@@ -45,3 +45,12 @@ a {
 .slick-prev:before {
   content: '' !important;
 }
+
+@media only screen and (max-width: 768px) {
+  .top-center {
+
+    top: calc(50% - 490px/2);
+
+  }
+
+}

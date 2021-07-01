@@ -71,7 +71,7 @@ function MyProject() {
         ]
     };
     return (
-        <section  className=" relative  m-auto ">
+        <section  className=" relative  m-auto top-center">
             <div >
                 <div className="md:text-5xl text-2xl font-bold text-center">
                     My Projects
