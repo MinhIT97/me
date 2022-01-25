@@ -123,13 +123,13 @@ function Skills() {
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#eee"
-                                                    stroke-width="5"
+                                                    strokeWidth="5"
                                                     fill-opacity="0"
                                                 ></path>
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#555"
-                                                    stroke-width="5"
+                                                    strokeWidth="5"
                                                     fill-opacity="0"
                                                     style={{ strokeDasharray: "298.493, 298.493", strokeDashoffset: 134.322 }}
                                                 ></path>
@@ -152,13 +152,13 @@ function Skills() {
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#eee"
-                                                    stroke-width="5"
+                                                    strokeWidth="5"
                                                     fill-opacity="0"
                                                 ></path>
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#555"
-                                                    stroke-width="5"
+                                                    strokeWidth="5"
                                                     fill-opacity="0"
                                                     style={{ strokeDasharray: "298.493, 298.493", strokeDashoffset: 149 }}
                                                 ></path>
@@ -181,13 +181,13 @@ function Skills() {
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#eee"
-                                                    stroke-width="5"
+                                                    strokeWidth="5"
                                                     fill-opacity="0"
                                                 ></path>
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#555"
-                                                    stroke-width="5"
+                                                    strokeWidth="5"
                                                     fill-opacity="0"
                                                     style={{ strokeDasharray: "298.493, 298.493", strokeDashoffset: 111.397 }}
                                                 ></path>

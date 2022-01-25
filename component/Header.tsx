@@ -109,7 +109,7 @@ export default function Example() {
     const trans = useTrans();
 
     return (
-        <div className="fixed z-10 w-full top-0 p-3 md:p-0" >
+        <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0" >
 
             <Popover className="relative ">
                 {({ open }) => (

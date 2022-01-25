@@ -23,9 +23,9 @@ function Experiences() {
                                         </div>
                                         <div>
                                             <p className="text-lg font-medium">
-                                                “Tailwind CSS is the only framework that I've seen scale
-                                                on large teams. It’s easy to customize, adapts to any design,
-                                                and the build size is tiny.”
+                                                Specialization  : Software technology
+                                                <br />
+                                                Graduation GPA: 2.42
                                             </p>
                                         </div>
 
@@ -46,13 +46,20 @@ function Experiences() {
                                                 </h4>
                                             </div>
                                             <div className="text-customTurquoise-100 my-2">
-                                                11/2019 - 2020
+                                                11/2019 - 9/2020
                                             </div>
                                             <div>
                                                 Responsibility :
-                                                <p className="text-lg font-medium">
-
-                                                </p>
+                                                <ul className="list-disc ml-8">
+                                                    <li>Software developer</li>
+                                                    <li>Module development</li>
+                                                    <li>Api design</li>
+                                                    <li>DB design</li>
+                                                    <li>Frontend developer</li>
+                                                </ul>
+                                                <div className="mt-3">
+                                                    Technology: Laravel , Jquery , Angular , React , Mysql.
+                                                </div>
                                             </div>
 
                                         </div>
@@ -66,15 +73,17 @@ function Experiences() {
                                                 </h4>
                                             </div>
                                             <div className="text-customTurquoise-100 my-2">
-                                                2015 - 2020
+                                                10-2020 - 12/2020
                                             </div>
                                             <div>
                                                 Responsibility :
-                                                <p className="text-lg font-medium">
-
-                                                </p>
+                                                <ul className="list-disc ml-8">
+                                                    <li>Mobile app developer (React native)</li>
+                                                </ul>
                                             </div>
-
+                                            <div className="mt-3">
+                                                Technology: React native , redux.
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="md:flex bg-gray-500 rounded-xl p-8 md:p-0 dark:bg-slate-800">
@@ -86,13 +95,20 @@ function Experiences() {
                                                 </h4>
                                             </div>
                                             <div className="text-customTurquoise-100 my-2">
-                                                2015 - 2020
+                                                12/2020 - Now
                                             </div>
                                             <div>
                                                 Responsibility :
-                                                <p className="text-lg font-medium">
-
-                                                </p>
+                                                <ul className="list-disc ml-8">
+                                                    <li>Software developer</li>
+                                                    <li>Module development</li>
+                                                    <li>Api design</li>
+                                                    <li>DB design</li>
+                                                    <li>Frontend developer</li>
+                                                </ul>
+                                                <div className="mt-3">
+                                                    Technology: Laravel , Mongodb , Jenkin , Jquery , Mithriljs.
+                                                </div>
                                             </div>
 
                                         </div>
