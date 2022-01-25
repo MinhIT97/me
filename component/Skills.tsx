@@ -1,4 +1,7 @@
+import useTrans from "../src/hooks/useTrans";
+
 function Skills() {
+    const trans = useTrans();
     return (
         <section id="skills">
             <div className="container m-auto">
@@ -8,7 +11,7 @@ function Skills() {
 
 
                             <div className="each-skills text-center">
-                                <h3 className="font-bold text-xl mb-14">Technical Skills</h3>
+                                <h3 className="font-bold text-xl mb-14">{trans.skills.technicalSkills}</h3>
                                 <div className="candidatos">
                                     <div className="parcial">
                                         <div className="info">
@@ -82,7 +85,7 @@ function Skills() {
                             </div>
 
                             <div className="text-center">
-                                <h3 className="font-bold text-xl mb-14">Professional Skills</h3>
+                                <h3 className="font-bold text-xl mb-14">{trans.skills.professionalSkills}</h3>
 
                                 <ul className="mh-professional-progress">
                                     <li>
@@ -112,7 +115,7 @@ function Skills() {
                                                 95%
                                             </p>
                                         </div>
-                                        <div className="pr-skill-name">Communication</div>
+                                        <div className="pr-skill-name">{trans.skills.communication}</div>
                                     </li>
                                     <li>
                                         <div
@@ -124,13 +127,13 @@ function Skills() {
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#eee"
                                                     strokeWidth="5"
-                                                    fill-opacity="0"
+                                                    fillOpacity="0"
                                                 ></path>
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#555"
                                                     strokeWidth="5"
-                                                    fill-opacity="0"
+                                                    fillOpacity="0"
                                                     style={{ strokeDasharray: "298.493, 298.493", strokeDashoffset: 134.322 }}
                                                 ></path>
                                             </svg>
@@ -141,7 +144,7 @@ function Skills() {
                                                 55%
                                             </p>
                                         </div>
-                                        <div className="pr-skill-name">Team Work</div>
+                                        <div className="pr-skill-name">{trans.skills.teamWork}</div>
                                     </li>
                                     <li>
                                         <div
@@ -153,13 +156,13 @@ function Skills() {
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#eee"
                                                     strokeWidth="5"
-                                                    fill-opacity="0"
+                                                    fillOpacity="0"
                                                 ></path>
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#555"
                                                     strokeWidth="5"
-                                                    fill-opacity="0"
+                                                    fillOpacity="0"
                                                     style={{ strokeDasharray: "298.493, 298.493", strokeDashoffset: 149 }}
                                                 ></path>
                                             </svg>
@@ -170,7 +173,7 @@ function Skills() {
                                                 50%
                                             </p>
                                         </div>
-                                        <div className="pr-skill-name">Project Management</div>
+                                        <div className="pr-skill-name">{trans.skills.projectManagement}</div>
                                     </li>
                                     <li>
                                         <div
@@ -182,13 +185,13 @@ function Skills() {
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#eee"
                                                     strokeWidth="5"
-                                                    fill-opacity="0"
+                                                    fillOpacity="0"
                                                 ></path>
                                                 <path
                                                     d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                                                     stroke="#555"
                                                     strokeWidth="5"
-                                                    fill-opacity="0"
+                                                    fillOpacity="0"
                                                     style={{ strokeDasharray: "298.493, 298.493", strokeDashoffset: 111.397 }}
                                                 ></path>
                                             </svg>
@@ -198,7 +201,7 @@ function Skills() {
                                                 60%
                                             </p>
                                         </div>
-                                        <div className="pr-skill-name">Creativity</div>
+                                        <div className="pr-skill-name">{trans.skills.creativity}</div>
                                     </li>
                                 </ul>
                             </div>

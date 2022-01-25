@@ -1,4 +1,5 @@
 import Slider from "react-slick";
+import useTrans from "../src/hooks/useTrans";
 
 function SampleNextArrow(props) {
     const { className, style, onClick } = props;
@@ -33,6 +34,8 @@ function SamplePrevArrow(props) {
 
 
 function MyProject() {
+
+    const trans = useTrans();
     const settings = {
         dots: true,
         infinite: true,
@@ -76,10 +79,10 @@ function MyProject() {
                 <div className="section-separator">
                     <div className="max-w-5xl m-auto">
                         <div className="md:text-3xl text-2xl font-bold text-center">
-                            My Projects
+                            {trans.myProject.myProject}
                         </div>
                         <div className="text-center mt-4 md:text-xl text-base  text-gray-600">
-                            Here are some interesting points in my projects...
+                            {trans.myProject.content}
                         </div>
                         <div className="  m-auto">
                             <Slider {...settings}>

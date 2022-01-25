@@ -1,4 +1,8 @@
+import useTrans from "../src/hooks/useTrans";
+
 function Me() {
+
+    const trans = useTrans();
     return (
         <section id="home">
             <div className="container m-auto">
@@ -7,16 +11,19 @@ function Me() {
                         <div className="sm:col-span-1 m-auto ">
                             <div className="md:text-5xl text-2xl font-bold ">
                                 <div>
-                                    Hello I'm Here.
+                                    {trans.me.hello}
                                 </div>
                                 <div>
-                                    A web developer
+                                    {trans.me.title}
                                 </div>
                             </div>
                             <div className="mt-4 md:text-xl text-base  text-gray-600">
                                 <p>
-                                    I will help you build a website, app, or 2D motion. I deploy excellence agile product teams on demand.
+                                    {trans.me.content}
                                 </p>
+
+
+
                             </div>
                         </div>
                         <div className="m-auto">
