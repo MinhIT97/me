@@ -17,8 +17,8 @@ export default {
     },
     me: {
         hello: "Hello",
-        title: "My name is Minh. I'm a web developer live in Ha Noi city.",
-        content: "I have more than 1+ years in design, building, customize website and so on."
+        title: "My name is Minh. I'm a web developer located in Ha Noi city.",
+        content: "I have more than 2+ years in web design and product development"
     },
     myProject: {
         myProject: "My Project",

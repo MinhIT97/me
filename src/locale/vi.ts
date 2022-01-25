@@ -16,7 +16,7 @@ export default {
     me: {
         hello: "Xin chào nè",
         title: "Tui là minh nè. Tui là dev sống ở Hà Nội á",
-        content: "Tui có hơn 2 năm kinh nghiệm trong các lĩnh vực thiết kế, phát triển và tuỳ chỉnh website ..."
+        content: "Tui có hơn 2 năm kinh nghiệm trong các lĩnh thiết kế web và phát triển sản phẩm phần mềm ..."
     },
     myProject: {
         myProject: "Dự án của tôi",
