@@ -2,7 +2,8 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ["./src/**/**/*.tsx", "./pages/*.tsx", "./pages/*.js", "./component/*.js", "./component/*.jsx" ,"./component/*.tsx"],
+  purge: ["./src/**/**/*.tsx", "./pages/*.tsx", "./pages/*.js", "./component/*.js", "./component/*.jsx", "./component/*.tsx"],
+  darkMode: 'class',
   theme: {
     // good to know: add default line height https://tailwindcss.com/docs/font-size#app
     extend: {
@@ -28,6 +29,9 @@ module.exports = {
         },
         customTurquoise: {
           100: "#0bceaf"
+        },
+        darkCustom: {
+          100: "#202026"
         },
         // custom dark scheme
         dark: {
@@ -100,6 +104,7 @@ module.exports = {
       "group-hover",
       "odd",
       "even",
+      "dark"
     ],
   },
   // eslint-disable-next-line global-require

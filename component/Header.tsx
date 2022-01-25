@@ -22,6 +22,7 @@ import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
 import FlagVietNam from "../src/svg/FlagVietNam";
 import useTrans from "../src/hooks/useTrans";
+import Toggle from "./Toggle";
 
 const solutions = [
     {
@@ -109,14 +110,14 @@ export default function Example() {
     const trans = useTrans();
 
     return (
-        <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0" >
+        <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0  dark:bg-darkCustom-100 dark:text-white"   >
 
             <Popover className="relative ">
                 {({ open }) => (
                     <>
                         <div className="max-w-screen-2xl  mx-auto ">
 
-                            <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
+                            <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10">
                                 <div className="flex justify-start lg:w-0 lg:flex-1">
                                     <span className="uppercase font-sans font-semibold text-xl">
                                         Minh Nguyen
@@ -128,10 +129,10 @@ export default function Example() {
                                         <MenuIcon className="h-6 w-6 focus:outline-none " aria-hidden="true" />
                                     </Popover.Button>
                                 </div>
-                                <Popover.Group as="nav" className="hidden md:flex space-x-10">
+                                <Popover.Group as="nav" className="hidden md:flex space-x-10 ">
                                     <a
                                         href="#home"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white "
                                     >
                                         <b>{trans.home.home}</b>
                                     </a>
@@ -139,37 +140,37 @@ export default function Example() {
 
                                     <a
                                         href="#about"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
                                     >
                                         {trans.home.about}
                                     </a>
                                     <a
                                         href="#projects"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
                                     >
                                         {trans.home.projects}
                                     </a>
                                     <a
                                         href="#skills"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
                                     >
                                         {trans.home.skills}
                                     </a>
                                     <a
                                         href="#experiences"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
                                     >
                                         {trans.home.experiences}
                                     </a>
                                     <a
                                         href="#services"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
                                     >
                                         {trans.home.services}
                                     </a>
                                     <a
                                         href="#contact"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
                                     >
                                         {trans.home.contact}
                                     </a>
@@ -184,6 +185,7 @@ export default function Example() {
                                             ))
                                         }
                                     </div>
+                                    <Toggle />
                                 </Popover.Group>
                             </div>
                         </div>
