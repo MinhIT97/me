@@ -6,7 +6,7 @@ import WhatsAppIcon from '@material-ui/icons/WhatsApp';
 import EmailIcon from '@material-ui/icons/Email';
 function CoppyRight() {
     return (
-        <div className="fixed bottom-10  w-full z-30 p-3 md:p-0">
+        <div className="fixed bottom-10  w-full z-0 p-3 md:p-0">
             <div className="flex justify-between max-w-screen-2xl m-auto">
                 <div>
                     <b className="bottom-0 absolute">

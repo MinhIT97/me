@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import CoppyRight from './copyright';
 import FindMe from './FIndMe';
 import { Popover, Transition } from "@headlessui/react";
+import Link from 'next/link'
 import {
     BookmarkAltIcon,
     CalendarIcon,
@@ -18,6 +19,9 @@ import {
     XIcon,
 } from "@heroicons/react/outline";
 import { ChevronDownIcon } from "@heroicons/react/solid";
+import { useRouter } from "next/router";
+import FlagVietNam from "../src/svg/FlagVietNam";
+import useTrans from "../src/hooks/useTrans";
 
 const solutions = [
     {
@@ -101,6 +105,9 @@ function classNames(...classes) {
 }
 
 export default function Example() {
+    const router = useRouter();
+    const trans = useTrans();
+
     return (
         <div className="fixed z-10 w-full top-0 p-3 md:p-0" >
 
@@ -108,7 +115,7 @@ export default function Example() {
                 {({ open }) => (
                     <>
                         <div className="max-w-screen-2xl  mx-auto ">
-                            
+
                             <div className="flex justify-between items-center  py-6 md:justify-start md:space-x-10">
                                 <div className="flex justify-start lg:w-0 lg:flex-1">
                                     <span className="uppercase font-sans font-semibold text-xl">
@@ -126,26 +133,47 @@ export default function Example() {
                                         href="#Home"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
-                                        <b>Home</b>
+                                        <b>{trans.home.home}</b>
                                     </a>
+
+
                                     <a
-                                        href="#project"
+                                        href="#about"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
-                                        Project
+                                        {trans.home.about}
                                     </a>
+
+
                                     <a
-                                        href="#services"
+                                        href="#skills"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
-                                        Services
+                                        {trans.home.skills}
                                     </a>
                                     <a
-                                        href="#contacts"
+                                        href="#experiences"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
-                                        Contacts
+                                        {trans.home.experiences}
                                     </a>
+                                    <a
+                                        href="#contact"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                    >
+                                        {trans.home.contact}
+                                    </a>
+                                    <div className="flex space-x-2 languageToggleDesktop">
+                                        {
+                                            router.locales.map((locale) => (
+                                                <div key={locale}>
+                                                    <Link href={router.asPath} locale={locale}>
+                                                        <a className="flex gap-2"> {locale == "vi" ? <img width={25} src="./vietnam.png" alt="" /> : <img width={23} src="./united-kingdom.png" alt="" />}</a>
+                                                    </Link>
+                                                </div>
+                                            ))
+                                        }
+                                    </div>
                                 </Popover.Group>
                             </div>
                         </div>
@@ -223,7 +251,7 @@ export default function Example() {
                 )}
             </Popover>
 
-         
+
         </div>
 
     );

@@ -9,8 +9,15 @@ import ReactPageScroller from "react-page-scroller";
 import Me from '../component/Me';
 
 import styles from "../styles/Home.module.scss";
+import useTrans from '../src/hooks/useTrans';
+
+import Skills from '../component/Skills';
+import About from '../component/About';
+import Experiences from '../component/Experiences';
+
 
 export default function Home() {
+  const trans = useTrans();
   return (
     <div >
       <Head>
@@ -24,15 +31,18 @@ export default function Home() {
       </div>
 
       <main className={styles.test}>
-        <ReactPageScroller containerHeight="100vh"   animationTimer={500} forwardRef={c => this.reactPageScroller = c}>
-          <Me />
-          <MyProject />
-          <Service />
-          <Contact />
+        {/* <ReactPageScroller containerHeight="100vh" animationTimer={500}   > */}
+        <Me />
+        <About />
+        <MyProject />
+        <Skills />
+        <Experiences />
+        <Service />
+        <Contact />
 
-        </ReactPageScroller>
-        
-        
+        {/* </ReactPageScroller> */}
+
+
       </main>
 
 

@@ -2,7 +2,7 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
-  purge: ["./src/**/**/*.tsx" , "./pages/*.tsx" , "./pages/*.js" , "./component/*.js" , "./component/*.jsx"],
+  purge: ["./src/**/**/*.tsx", "./pages/*.tsx", "./pages/*.js", "./component/*.js", "./component/*.jsx"],
   theme: {
     // good to know: add default line height https://tailwindcss.com/docs/font-size#app
     extend: {
@@ -25,6 +25,9 @@ module.exports = {
         },
         yellowF: {
           100: "#e9c46a"
+        },
+        customTurquoise: {
+          100: "#0bceaf"
         },
         // custom dark scheme
         dark: {
