@@ -6,7 +6,7 @@ export default {
         project: 'Project',
         about: 'About',
         projects: 'Projects',
-        aboutMe: 'About Me',
+        aboutMe: 'About',
         skills: 'Skills',
         experiences: 'Experiences',
         services: 'Services',
