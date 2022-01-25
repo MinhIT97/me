@@ -7,7 +7,7 @@ function Skills() {
             <div className="container m-auto">
                 <div className="max-w-5xl m-auto">
                     <div className="section-separator">
-                        <div className="grid grid-cols-2">
+                        <div className="p-3 grid grid-cols-1  md:grid-cols-2">
 
 
                             <div className="each-skills text-center">

@@ -9,7 +9,7 @@ function About() {
         <section id="about">
             <div className="container m-auto">
                 <div className="m-auto max-w-screen-lg  section-separator">
-                    <div className=" grid grid-cols-2 gap-20">
+                    <div className=" p-3 grid  grid-cols-1 md:grid-cols-2 gap-20">
                         <img src="../work.jpg" alt="" />
                         <div>
                             <div className="font-bold text-3xl">{trans.home.aboutMe}</div>

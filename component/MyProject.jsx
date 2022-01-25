@@ -88,10 +88,10 @@ function MyProject() {
                             <Slider {...settings}>
                                 <div className="p-4 focus:outline-none">
                                     <div className="grid grid-cols-5 gap-4">
-                                        <div className="col-span-3">
+                                        <div className="col-span-5 md:col-span-3">
                                             <img className="w-full h-auto" src="../Group67.png" alt="" />
                                         </div>
-                                        <div className="col-span-2" >
+                                        <div className=" col-span-5 md:col-span-2" >
                                             <h4 className="md:text-3xl text-2xl font-bold mb-3 font-sans ">
                                                 Sim selling website
                                             </h4>
@@ -114,10 +114,10 @@ function MyProject() {
                                 </div>
                                 <div className="p-4 focus:outline-none">
                                     <div className="grid grid-cols-5 gap-4">
-                                        <div className="col-span-3">
+                                        <div className="col-span-5 md:col-span-3">
                                             <img className="w-full h-auto" src="../Group68.png" alt="" />
                                         </div>
-                                        <div className="col-span-2">
+                                        <div className="col-span-5 md:col-span-2">
                                             <h4 className="md:text-3xl text-2xl font-bold  font-sans mb-3">
                                                 CRM Software
                                             </h4>
