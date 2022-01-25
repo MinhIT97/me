@@ -102,7 +102,7 @@ function MyProject() {
                                                 . Các chức năng của website được tối ưu để khách hàng có thể mua hàng và tham quan hàng hóa 1 cách nhanh nhất
                                             </p>
                                             <div className="mt-7">
-                                                <a className="bg-customTurquoise-100  rounded-full p-2 px-10 text-white font-bold text-xl " href="https://mobifonehanoi.vn/">Get started</a>
+                                                <a className="bg-customTurquoise-100  rounded-full p-2 px-10 text-white font-bold text-xl " target={"_blank"} href="https://mobifonehanoi.vn/">Get started</a>
                                             </div>
 
                                         </div>
@@ -125,7 +125,7 @@ function MyProject() {
                                             </div>
 
                                             <div className="mt-7">
-                                                <a className="bg-customTurquoise-100  rounded-full p-2 px-10 text-white font-bold text-xl " href="https://mobifonehanoi.vn/">Get started</a>
+                                                <a className="bg-customTurquoise-100  rounded-full p-2 px-10 text-white font-bold text-xl " target={"_blank"} href="https://bizfly.vn/giai-phap/bizfly-crm.html">Get started</a>
                                             </div>
                                         </div>
 
