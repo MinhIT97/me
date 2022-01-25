@@ -1,5 +1,7 @@
-function Experiences() {
+import useTrans from "../src/hooks/useTrans";
 
+function Experiences() {
+    const trans = useTrans();
     return (
         <section id="experiences" >
             <div className="container m-auto">
@@ -8,7 +10,7 @@ function Experiences() {
                         <div className="grid grid-cols-2 gap-20 text-white">
                             <div>
                                 <h3 className="text-4xl font-bold mb-12 text-black">
-                                    Education
+                                    {trans.experiences.education}
                                 </h3>
                                 <div className="md:flex bg-gray-500 rounded-xl p-8 md:p-0 dark:bg-slate-800">
                                     <div className="pt-6 md:p-8 text-center md:text-left ">
@@ -23,9 +25,9 @@ function Experiences() {
                                         </div>
                                         <div>
                                             <p className="text-lg font-medium">
-                                                Specialization  : Software technology
+                                                {trans.experiences.specialization}  : Software technology
                                                 <br />
-                                                Graduation GPA: 2.42
+                                                {trans.experiences.graduationGPA}: 2.42
                                             </p>
                                         </div>
 
@@ -49,7 +51,7 @@ function Experiences() {
                                                 11/2019 - 9/2020
                                             </div>
                                             <div>
-                                                Responsibility :
+                                                {trans.experiences.responsibility} :
                                                 <ul className="list-disc ml-8">
                                                     <li>Software developer</li>
                                                     <li>Module development</li>
@@ -58,7 +60,7 @@ function Experiences() {
                                                     <li>Frontend developer</li>
                                                 </ul>
                                                 <div className="mt-3">
-                                                    Technology: Laravel , Jquery , Angular , React , Mysql.
+                                                    {trans.experiences.technology}: Laravel , Jquery , Angular , React , Mysql.
                                                 </div>
                                             </div>
 
@@ -76,14 +78,14 @@ function Experiences() {
                                                 10-2020 - 12/2020
                                             </div>
                                             <div>
-                                                Responsibility :
+                                                {trans.experiences.responsibility} :
                                                 <ul className="list-disc ml-8">
                                                     <li>Mobile app developer (React native)</li>
                                                     <li>Parse api response</li>
                                                 </ul>
                                             </div>
                                             <div className="mt-3">
-                                                Technology: React native , redux.
+                                                {trans.experiences.technology}: React native , redux.
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +101,7 @@ function Experiences() {
                                                 12/2020 - Now
                                             </div>
                                             <div>
-                                                Responsibility :
+                                                {trans.experiences.responsibility} :
                                                 <ul className="list-disc ml-8">
                                                     <li>Software developer</li>
                                                     <li>Module development</li>
@@ -108,7 +110,7 @@ function Experiences() {
                                                     <li>Frontend developer</li>
                                                 </ul>
                                                 <div className="mt-3">
-                                                    Technology: Laravel , Mongodb , Jenkin , Jquery , Mithriljs.
+                                                    {trans.experiences.technology}: Laravel , Mongodb , Jenkin , Jquery , Mithriljs.
                                                 </div>
                                             </div>
 

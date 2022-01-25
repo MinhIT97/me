@@ -33,10 +33,11 @@ export default {
         creativity: "Creativity"
     },
     experiences: {
-        education: "Học vấn",
-        workWxperience: "Kinh nghiệm làm việc",
-        specialization: "Chuyên ngành",
-        graduationGPA: "Điểm trung bình tốt nghiệp",
-        technology: "Công nghệ"
+        education: "Education",
+        workWxperience: "Work Experience",
+        specialization: "Specialization ",
+        graduationGPA: "Graduation GPA",
+        technology: "Technology",
+        responsibility: "Responsibility"
     }
 }

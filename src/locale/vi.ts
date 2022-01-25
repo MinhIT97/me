@@ -29,5 +29,13 @@ export default {
         teamWork: "Làm việc nhóm",
         projectManagement: "Quản lý dự án",
         creativity: "Sáng tạo"
+    },
+    experiences: {
+        education: "Học vấn",
+        workWxperience: "Kinh nghiệm làm việc",
+        specialization: "Chuyên ngành",
+        graduationGPA: "Điểm trung bình tốt nghiệp",
+        technology: "Công nghệ",
+        responsibility: "Nhiệm vụ"
     }
 }
