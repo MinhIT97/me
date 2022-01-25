@@ -1,6 +1,6 @@
 function Service() {
     return (
-        <section id="service">
+        <section id="services">
             <div className="container m-auto">
                 <div className="section-separator">
                     <div className=" relative md:w-2/3 p-4 m-auto top-center">

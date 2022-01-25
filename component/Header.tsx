@@ -130,7 +130,7 @@ export default function Example() {
                                 </div>
                                 <Popover.Group as="nav" className="hidden md:flex space-x-10">
                                     <a
-                                        href="#Home"
+                                        href="#home"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
                                         <b>{trans.home.home}</b>
@@ -143,8 +143,12 @@ export default function Example() {
                                     >
                                         {trans.home.about}
                                     </a>
-
-
+                                    <a
+                                        href="#projects"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                    >
+                                        {trans.home.projects}
+                                    </a>
                                     <a
                                         href="#skills"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
@@ -156,6 +160,12 @@ export default function Example() {
                                         className="text-base font-medium text-gray-500 hover:text-gray-900"
                                     >
                                         {trans.home.experiences}
+                                    </a>
+                                    <a
+                                        href="#services"
+                                        className="text-base font-medium text-gray-500 hover:text-gray-900"
+                                    >
+                                        {trans.home.services}
                                     </a>
                                     <a
                                         href="#contact"

@@ -1,6 +1,6 @@
 function Skills() {
     return (
-        <section id="skill">
+        <section id="skills">
             <div className="container m-auto">
                 <div className="max-w-5xl m-auto">
                     <div className="section-separator">

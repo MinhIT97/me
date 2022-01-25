@@ -79,6 +79,7 @@ function Experiences() {
                                                 Responsibility :
                                                 <ul className="list-disc ml-8">
                                                     <li>Mobile app developer (React native)</li>
+                                                    <li>Parse api response</li>
                                                 </ul>
                                             </div>
                                             <div className="mt-3">

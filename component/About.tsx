@@ -1,3 +1,4 @@
+import { DownloadIcon, FolderDownloadIcon } from "@heroicons/react/outline";
 import useTrans from "../src/hooks/useTrans";
 
 import style from "../styles/Home.module.scss";
@@ -46,6 +47,9 @@ function About() {
                                         <span>Git</span>
                                     </li>
                                 </ul>
+                            </div>
+                            <div className="mt-6">
+                                <a href="../NguyenVanMinh-php-0986082324.pdf" target={"_blank"} className="flex gap-3 bg-customTurquoise-100 w-40 p-2  rounded-3xl text-white items-center justify-center"><span className="font-bold">Download CV</span>  <FolderDownloadIcon width={20} /> </a>
                             </div>
                         </div>
                     </div>
