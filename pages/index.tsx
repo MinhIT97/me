@@ -23,6 +23,10 @@ export default function Home() {
       <Head>
         <title>Minh Nguyen</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Portfolio Nguyễn Văn Minh developer "></meta>
+        <meta property="og:image" content="./Group 69.png"></meta>
+        <meta property="og:title" content="Minh Nguyen"></meta>
+        <meta property="og:title" content="Portfolio Nguyễn Văn Minh developer"></meta>
       </Head>
       <Example />
 
