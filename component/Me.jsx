@@ -21,9 +21,6 @@ function Me() {
                                 <p>
                                     {trans.me.content}
                                 </p>
-
-
-
                             </div>
                         </div>
                         <div className="m-auto">
@@ -33,7 +30,6 @@ function Me() {
                 </div>
             </div >
         </section >
-
     )
 }
 

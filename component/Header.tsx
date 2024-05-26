@@ -110,14 +110,14 @@ export default function Example() {
     const trans = useTrans();
 
     return (
-        <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0  dark:bg-darkCustom-100 dark:text-white"   >
+        <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0  dark:bg-darkCustom-100 dark:text-white shadow-sm">
 
             <Popover className="relative ">
                 {({ open }) => (
                     <>
                         <div className="max-w-screen-2xl  mx-auto ">
 
-                            <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10">
+                            <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10 ">
                                 <div className="flex justify-start lg:w-0 lg:flex-1">
                                     <span className="uppercase font-sans font-semibold text-xl">
                                         Minh Nguyen

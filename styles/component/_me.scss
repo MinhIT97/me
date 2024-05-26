@@ -1,0 +1,38 @@
+.me {
+    .info {
+        &-skills {
+            margin: auto;
+            font-size: 40px;
+            font-weight: 800;
+            &--job {
+                background-color: #5763FF;
+                color: #ffffff;
+                padding: 0.25rem 1.75rem;
+                border-radius: 1.5rem;
+                margin-left: 1.5rem;
+                font-size: 1.5rem;
+            }
+            &--description {
+                font-size: 1.5rem;
+                font-weight: 500;
+                font-family: inherit;
+            }
+        }
+        &-me {
+            background-color: #ddd1c1;
+            color: #ffffff;
+            height: calc(100vh - 4.375rem);
+            margin-top: 4.375rem;
+        }
+        &-contact {
+            margin-top: 3.75rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            &--hire-me {
+                background-color: #fd481d;
+                color: #ffffff;
+                padding: 0.75rem 2.25rem;
+            }
+        }
+    }
+}
