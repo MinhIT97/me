@@ -1,6 +1,11 @@
 import Image from "next/image";
 import useTrans from "../../src/hooks/useTrans";
 import mountains from '../../public/photo_2024-05-26_13-10-25-removebg-preview.png'
+import git from '../../public/Git-Logo-1788C.png'
+import laravel from '../../public/laravel.png'
+import nextjs from '../../public/next-js.png'
+import mysql from '../../public/mysql.png'
+import vscode from '../../public/vscode.png'
 const calculateYearsDifference = () => {
     const startDate = new Date(2019, 10); // Tháng 11 là tháng 10 (vì tháng trong JavaScript bắt đầu từ 0)
     const currentDate = new Date();
@@ -49,13 +54,63 @@ function Me() {
                         <div className="" >
                             <div className="info-me pt-16">
                                 <div className="relative h-full" >
-                                    <Image alt="Mountains"
+                                    <Image alt="me"
                                         src={mountains}
                                         placeholder="blur"
                                         quality={100}
                                         layout="fill"
                                         objectFit="contain"
                                     />
+                                    <div className="info-me--skill-git">
+                                        <Image alt="git"
+                                            width={60}
+                                            src={git}
+                                            placeholder="blur"
+                                            quality={100}
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
+                                    </div>
+                                    <div className="info-me--skill-laravel">
+                                        <Image alt="laravel"
+                                            width={60}
+                                            src={laravel}
+                                            placeholder="blur"
+                                            quality={100}
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
+                                    </div>
+                                    <div className="info-me--skill-nextjs">
+                                        <Image alt="nextjs"
+                                            width={60}
+                                            src={nextjs}
+                                            placeholder="blur"
+                                            quality={100}
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
+                                    </div>
+                                    <div className="info-me--skill-mysql">
+                                        <Image alt="mysql"
+                                            width={60}
+                                            src={mysql}
+                                            placeholder="blur"
+                                            quality={100}
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
+                                    </div>
+                                    <div className="info-me--skill-vscode">
+                                        <Image alt="vscode"
+                                            width={60}
+                                            src={vscode}
+                                            placeholder="blur"
+                                            quality={100}
+                                            layout="fill"
+                                            objectFit="contain"
+                                        />
+                                    </div>
                                 </div>
 
                             </div>

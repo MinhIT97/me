@@ -23,6 +23,41 @@
             color: #ffffff;
             height: calc(100vh - 4.375rem);
             margin-top: 4.375rem;
+            &--skill-git {
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                left: 37%;
+                top: 5%;
+            }
+            &--skill-laravel {
+                width: 45px;
+                height: 45px;
+                position: absolute;
+                left: 62%;
+                top: 0%;
+            }
+            &--skill-nextjs {
+                width: 38px;
+                height: 38px;
+                position: absolute;
+                left: 34%;
+                top: 22%;
+            }
+            &--skill-mysql {
+                width: 60px;
+                height: 60px;
+                position: absolute;
+                left: 68%;
+                top: 20%;
+            }
+            &--skill-vscode {
+                width: 40px;
+                height: 40px;
+                position: absolute;
+                left: 25%;
+                top: 40%;
+            }
         }
         &-contact {
             margin-top: 3.75rem;
