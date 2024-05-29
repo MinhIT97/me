@@ -6,6 +6,10 @@ import laravel from '../../public/laravel.png'
 import nextjs from '../../public/next-js.png'
 import mysql from '../../public/mysql.png'
 import vscode from '../../public/vscode.png'
+import ubuntu from '../../public/ubuntu.png'
+import IconImage from "../image/IconImage";
+import figma from '../../public/figma.png';
+import nestjs from '../../public/nestjs.png';
 const calculateYearsDifference = () => {
     const startDate = new Date(2019, 10); // Tháng 11 là tháng 10 (vì tháng trong JavaScript bắt đầu từ 0)
     const currentDate = new Date();
@@ -52,7 +56,7 @@ function Me() {
                             </div>
                         </div>
                         <div className="" >
-                            <div className="info-me pt-16">
+                            <div className="info-me pt-16 relative">
                                 <div className="relative h-full" >
                                     <Image alt="me"
                                         src={mountains}
@@ -61,56 +65,16 @@ function Me() {
                                         layout="fill"
                                         objectFit="contain"
                                     />
-                                    <div className="info-me--skill-git">
-                                        <Image alt="git"
-                                            width={60}
-                                            src={git}
-                                            placeholder="blur"
-                                            quality={100}
-                                            layout="fill"
-                                            objectFit="contain"
-                                        />
-                                    </div>
-                                    <div className="info-me--skill-laravel">
-                                        <Image alt="laravel"
-                                            width={60}
-                                            src={laravel}
-                                            placeholder="blur"
-                                            quality={100}
-                                            layout="fill"
-                                            objectFit="contain"
-                                        />
-                                    </div>
-                                    <div className="info-me--skill-nextjs">
-                                        <Image alt="nextjs"
-                                            width={60}
-                                            src={nextjs}
-                                            placeholder="blur"
-                                            quality={100}
-                                            layout="fill"
-                                            objectFit="contain"
-                                        />
-                                    </div>
-                                    <div className="info-me--skill-mysql">
-                                        <Image alt="mysql"
-                                            width={60}
-                                            src={mysql}
-                                            placeholder="blur"
-                                            quality={100}
-                                            layout="fill"
-                                            objectFit="contain"
-                                        />
-                                    </div>
-                                    <div className="info-me--skill-vscode">
-                                        <Image alt="vscode"
-                                            width={60}
-                                            src={vscode}
-                                            placeholder="blur"
-                                            quality={100}
-                                            layout="fill"
-                                            objectFit="contain"
-                                        />
-                                    </div>
+                                </div>
+                                <div>
+                                    <IconImage src={git} classParent="info-me--skill-git" width={60} alt="git" />
+                                    <IconImage src={laravel} classParent="info-me--skill-laravel" width={60} alt="laravel" />
+                                    <IconImage src={nextjs} classParent="info-me--skill-nextjs" width={60} alt="nextjs" />
+                                    <IconImage src={mysql} classParent="info-me--skill-mysql" width={60} alt="mysql" />
+                                    <IconImage src={vscode} classParent="info-me--skill-vscode" width={60} alt="vscode" />
+                                    <IconImage src={ubuntu} classParent="info-me--skill-ubuntu" width={60} alt="ubuntu" />
+                                    <IconImage src={figma} classParent="info-me--skill-figma" width={60} alt="figma" />
+                                    <IconImage src={nestjs} classParent="info-me--skill-nestjs" width={60} alt="nestjs" />
                                 </div>
 
                             </div>
