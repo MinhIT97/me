@@ -10,6 +10,7 @@ import ubuntu from '../../public/ubuntu.png'
 import IconImage from "../image/IconImage";
 import figma from '../../public/figma.png';
 import nestjs from '../../public/nestjs.png';
+import GlowingBall from "../GlowingBall";
 const calculateYearsDifference = () => {
     const startDate = new Date(2019, 10); // Tháng 11 là tháng 10 (vì tháng trong JavaScript bắt đầu từ 0)
     const currentDate = new Date();
@@ -67,14 +68,14 @@ function Me() {
                                     />
                                 </div>
                                 <div>
-                                    <IconImage src={git} classParent="info-me--skill-git" width={60} alt="git" />
-                                    <IconImage src={laravel} classParent="info-me--skill-laravel" width={45} alt="laravel" />
-                                    <IconImage src={nextjs} classParent="info-me--skill-nextjs" width={38} alt="nextjs" />
-                                    <IconImage src={mysql} classParent="info-me--skill-mysql" width={60} alt="mysql" />
-                                    <IconImage src={vscode} classParent="info-me--skill-vscode" width={40} alt="vscode" />
-                                    <IconImage src={ubuntu} classParent="info-me--skill-ubuntu" width={40} alt="ubuntu" />
-                                    <IconImage src={figma} classParent="info-me--skill-figma" width={40} alt="figma" />
-                                    <IconImage src={nestjs} classParent="info-me--skill-nestjs" width={40} alt="nestjs" />
+                                    <IconImage  src={git} classParent="info-me--image-ball info-me--skill-git"   width={50} alt="git" />
+                                    <IconImage  src={laravel} classParent="info-me--image-ball info-me--skill-laravel" width={35} alt="laravel" />
+                                    <IconImage  src={nextjs} classParent="info-me--image-ball info-me--skill-nextjs" width={38} alt="nextjs" />
+                                    <IconImage  src={mysql} classParent="info-me--image-ball info-me--skill-mysql" width={45} alt="mysql" />
+                                    <IconImage  src={vscode} classParent="info-me--image-ball info-me--skill-vscode" width={40} alt="vscode" />
+                                    <IconImage  src={ubuntu} classParent="info-me--image-ball info-me--skill-ubuntu" width={35} alt="ubuntu" />
+                                    <IconImage  src={figma} classParent="info-me--image-ball info-me--skill-figma" width={40} alt="figma" />
+                                    <IconImage  src={nestjs} classParent="info-me--image-ball info-me--skill-nestjs" width={40} alt="nestjs" />
                                 </div>
                             </div>
                         </div>

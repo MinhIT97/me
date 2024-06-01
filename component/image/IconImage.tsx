@@ -2,12 +2,19 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import styles from '../../styles/component/MovingElement.module.css';
 
-function IconImage({ src, width = 24, classParent = '', alt = 'image' }) {
+const animations = ['rotate1', 'rotate2', 'rotate3', 'rotate4'];
 
+function IconImage({ src, width = 24, classParent = '', alt = 'image' ,classChilren='' }) {
     const elementRef = useRef(null);
     const [isHovered, setIsHovered] = useState(false);
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+    const [animation, setAnimation] = useState('');
 
     useEffect(() => {
+        // Chọn ngẫu nhiên một animation từ danh sách
+        const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
+        setAnimation(randomAnimation);
+
         const handleMouseMove = (event) => {
             if (!isHovered) return;
 
@@ -21,34 +28,51 @@ function IconImage({ src, width = 24, classParent = '', alt = 'image' }) {
             const deltaX = event.clientX - elementX;
             const deltaY = event.clientY - elementY;
 
-            const moveX = deltaX / 10; // Điều chỉnh tốc độ di chuyển
-            const moveY = deltaY / 10;
-
-            element.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            setPosition({ x: deltaX / 10, y: deltaY / 10 });
         };
 
-        document.addEventListener('mousemove', handleMouseMove);
+        const animate = (event) => {
+            requestAnimationFrame(() => handleMouseMove(event));
+        };
+
+        document.addEventListener('mousemove', animate);
 
         return () => {
-            document.removeEventListener('mousemove', handleMouseMove);
+            document.removeEventListener('mousemove', animate);
         };
     }, [isHovered]);
 
+    useEffect(() => {
+        if (elementRef.current) {
+            elementRef.current.style.transform = `translate3d(${position.x}px, ${position.y}px, 0)`;
+        }
+    }, [position]);
+
     const handleMouseEnter = () => {
         setIsHovered(true);
+        elementRef.current.classList.add(styles.paused);
     };
 
     const handleMouseLeave = () => {
         setIsHovered(false);
-        elementRef.current.style.transform = 'translate(0, 0)';
+        setPosition({ x: 0, y: 0 });
+        if (elementRef.current) {
+            elementRef.current.style.transform = 'translate3d(0, 0, 0)';
+            elementRef.current.classList.remove(styles.paused);
+        }
     };
+
     return (
-        <div className={classParent + ' ' + styles.movingElement} ref={elementRef}
+        <div
+            className={`${classParent} ${styles.movingElement}`}
+            ref={elementRef}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
+            style={{ animation: `${animation} 10s linear infinite` }}
         >
-            <div className="relative" style={{ width: width, height: width }}>
-                <Image alt={alt}
+            <div className={classChilren + ' relative'} style={{ width: width, height: width }}>
+                <Image
+                    alt={alt}
                     src={src}
                     placeholder="blur"
                     quality={100}
@@ -59,7 +83,5 @@ function IconImage({ src, width = 24, classParent = '', alt = 'image' }) {
         </div>
     );
 }
-
-
 
 export default IconImage;
