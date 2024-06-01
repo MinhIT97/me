@@ -32,9 +32,9 @@ function Me() {
         <section id="home" className="me">
             <div className=" m-auto">
                 <div className=" info">
-                    <div className="grid grid-cols-2 gap-4">
-                        <div className="info-skills">
-                            <div>
+                    <div className="grid lg:grid-cols-2 gap-4">
+                        <div className="info-skills  ">
+                            <div className="mt-44  lg:mt-0 ">
                                 Hi! I Am <span className="info-skills--job">Developer</span>
                             </div>
                             <div>
@@ -68,15 +68,14 @@ function Me() {
                                 </div>
                                 <div>
                                     <IconImage src={git} classParent="info-me--skill-git" width={60} alt="git" />
-                                    <IconImage src={laravel} classParent="info-me--skill-laravel" width={60} alt="laravel" />
-                                    <IconImage src={nextjs} classParent="info-me--skill-nextjs" width={60} alt="nextjs" />
+                                    <IconImage src={laravel} classParent="info-me--skill-laravel" width={45} alt="laravel" />
+                                    <IconImage src={nextjs} classParent="info-me--skill-nextjs" width={38} alt="nextjs" />
                                     <IconImage src={mysql} classParent="info-me--skill-mysql" width={60} alt="mysql" />
-                                    <IconImage src={vscode} classParent="info-me--skill-vscode" width={60} alt="vscode" />
-                                    <IconImage src={ubuntu} classParent="info-me--skill-ubuntu" width={60} alt="ubuntu" />
-                                    <IconImage src={figma} classParent="info-me--skill-figma" width={60} alt="figma" />
-                                    <IconImage src={nestjs} classParent="info-me--skill-nestjs" width={60} alt="nestjs" />
+                                    <IconImage src={vscode} classParent="info-me--skill-vscode" width={40} alt="vscode" />
+                                    <IconImage src={ubuntu} classParent="info-me--skill-ubuntu" width={40} alt="ubuntu" />
+                                    <IconImage src={figma} classParent="info-me--skill-figma" width={40} alt="figma" />
+                                    <IconImage src={nestjs} classParent="info-me--skill-nestjs" width={40} alt="nestjs" />
                                 </div>
-
                             </div>
                         </div>
                     </div>

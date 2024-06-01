@@ -9,7 +9,7 @@
     },
 
     "engines": {
-        "node": "18.x"
+        "node": "22.1.0"
     },
     "dependencies": {
         "@headlessui/react": "^1.2.0",
