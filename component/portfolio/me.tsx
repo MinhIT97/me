@@ -10,7 +10,6 @@ import ubuntu from '../../public/ubuntu.png'
 import IconImage from "../image/IconImage";
 import figma from '../../public/figma.png';
 import nestjs from '../../public/nestjs.png';
-import GlowingBall from "../GlowingBall";
 const calculateYearsDifference = () => {
     const startDate = new Date(2019, 10); // Tháng 11 là tháng 10 (vì tháng trong JavaScript bắt đầu từ 0)
     const currentDate = new Date();

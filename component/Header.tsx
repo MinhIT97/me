@@ -23,6 +23,7 @@ import { useRouter } from "next/router";
 import FlagVietNam from "../src/svg/FlagVietNam";
 import useTrans from "../src/hooks/useTrans";
 import Toggle from "./Toggle";
+import AudioPlayer from "./AudioPlayer";
 
 const solutions = [
     {
@@ -136,14 +137,6 @@ export default function Example() {
                                     >
                                         <b>{trans.home.home}</b>
                                     </a>
-
-
-                                    <a
-                                        href="#about"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
-                                    >
-                                        {trans.home.about}
-                                    </a>
                                     <a
                                         href="#projects"
                                         className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
@@ -186,6 +179,7 @@ export default function Example() {
                                         }
                                     </div>
                                     <Toggle />
+                                    <AudioPlayer />
                                 </Popover.Group>
                             </div>
                         </div>

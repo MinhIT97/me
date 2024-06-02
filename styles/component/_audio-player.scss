@@ -1,0 +1,68 @@
+.bar-c {
+    overflow: hidden;
+    height: 16px;
+    width: 16px;
+    margin: 0 auto;
+    position: relative;
+    cursor: pointer;
+}
+
+.bar {
+    height: 1px;
+    width: 3px;
+    display: inline-block;
+    background-color: black;
+    bottom: 0;
+    position: absolute;
+    &.noAnim {
+        -webkit-animation: none;
+        -webkit-animation-name: none;
+    }
+    &#bar-1 {
+        left: 0;
+        -webkit-animation-name: danceHeight1;
+        -webkit-animation-delay: 0ms;
+    }
+    &#bar-2 {
+        left: 6px;
+        -webkit-animation-name: danceHeight2;
+        -webkit-animation-delay: 250ms;
+    }
+    &#bar-3 {
+        left: 12px;
+        -webkit-animation-name: danceHeight3;
+        -webkit-animation-delay: 300ms;
+    }
+    -webkit-animation-duration: 300ms;
+    -webkit-animation-play-state: running;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-webkit-keyframes danceHeight1 {
+    from {
+        height: 1px;
+    }
+    to {
+        height: 13px;
+    }
+}
+
+@-webkit-keyframes danceHeight2 {
+    from {
+        height: 1px;
+    }
+    to {
+        height: 12px;
+    }
+}
+
+@-webkit-keyframes danceHeight3 {
+    from {
+        height: 1px;
+    }
+    to {
+        height: 11px;
+    }
+}
