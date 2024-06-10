@@ -1,9 +1,9 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
-import CoppyRight from './copyright';
-import FindMe from './FIndMe';
+import CoppyRight from "./copyright";
+import FindMe from "./FIndMe";
 import { Popover, Transition } from "@headlessui/react";
-import Link from 'next/link'
+import Link from "next/link";
 import {
     BookmarkAltIcon,
     CalendarIcon,
@@ -112,12 +112,10 @@ export default function Example() {
 
     return (
         <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0  dark:bg-darkCustom-100 dark:text-white shadow-sm">
-
             <Popover className="relative ">
                 {({ open }) => (
                     <>
                         <div className="max-w-screen-2xl  mx-auto ">
-
                             <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10 ">
                                 <div className="flex justify-start lg:w-0 lg:flex-1">
                                     <span className="uppercase font-sans font-semibold text-xl">
@@ -127,56 +125,67 @@ export default function Example() {
                                 <div className="-mr-2 -my-2 md:hidden">
                                     <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400  focus:outline-none">
                                         <span className="sr-only">Open menu</span>
-                                        <MenuIcon className="h-6 w-6 focus:outline-none " aria-hidden="true" />
+                                        <MenuIcon
+                                            className="h-6 w-6 focus:outline-none "
+                                            aria-hidden="true"
+                                        />
                                     </Popover.Button>
                                 </div>
                                 <Popover.Group as="nav" className="hidden md:flex space-x-10 ">
-                                    <a
-                                        href="#home"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white "
-                                    >
-                                        <b>{trans.home.home}</b>
-                                    </a>
-                                    <a
-                                        href="#projects"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
-                                    >
-                                        {trans.home.projects}
-                                    </a>
+                                    <Link href="/">
+                                        <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
+                                            <b>{trans.home.home}</b>
+                                        </a>
+                                    </Link> 
+                                    <Link href="/projects">
+                                        <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
+                                            <b> {trans.home.projects}</b>
+                                        </a>
+                                    </Link>
+
                                     <a
                                         href="#skills"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
+                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
                                     >
-                                        {trans.home.skills}
+                                        <b> {trans.home.skills}</b>
                                     </a>
                                     <a
                                         href="#experiences"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
+                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
                                     >
-                                        {trans.home.experiences}
+                                        <b>{trans.home.experiences}</b>
                                     </a>
                                     <a
                                         href="#services"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
+                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
                                     >
-                                        {trans.home.services}
+                                        <b> {trans.home.services}</b>
                                     </a>
                                     <a
                                         href="#contact"
-                                        className="text-base font-medium text-gray-500 hover:text-gray-900 dark:text-white"
+                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
                                     >
-                                        {trans.home.contact}
+                                        <b>{trans.home.contact}</b>
                                     </a>
                                     <div className="flex space-x-2 languageToggleDesktop">
-                                        {
-                                            router.locales.map((locale) => (
-                                                <div key={locale}>
-                                                    <Link href={router.asPath} locale={locale}>
-                                                        <a className="flex gap-2"> {locale == "vi" ? <img width={25} src="./vietnam.png" alt="" /> : <img width={23} src="./united-kingdom.png" alt="" />}</a>
-                                                    </Link>
-                                                </div>
-                                            ))
-                                        }
+                                        {router.locales.map((locale) => (
+                                            <div key={locale}>
+                                                <Link href={router.asPath} locale={locale}>
+                                                    <a className="flex gap-2">
+                                                        {" "}
+                                                        {locale == "vi" ? (
+                                                            <img width={25} src="./vietnam.png" alt="" />
+                                                        ) : (
+                                                            <img
+                                                                width={23}
+                                                                src="./united-kingdom.png"
+                                                                alt=""
+                                                            />
+                                                        )}
+                                                    </a>
+                                                </Link>
+                                            </div>
+                                        ))}
                                     </div>
                                     <Toggle />
                                     <AudioPlayer />
@@ -202,11 +211,13 @@ export default function Example() {
                                 <div className="rounded-lg shadow-lg ring-1 h-full ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
                                     <div className="h-full">
                                         <div className="grid  grid-rows-4 gap-x-4g gap-y-8">
-                                            <div className="flex justify-end pr-7 pt-4" aria-hidden="false">
-
+                                            <div
+                                                className="flex justify-end pr-7 pt-4"
+                                                aria-hidden="false"
+                                            >
                                                 <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
-
-                                                    <svg aria-hidden="false"
+                                                    <svg
+                                                        aria-hidden="false"
                                                         xmlns="http://www.w3.org/2000/svg"
                                                         className="h-6 w-6"
                                                         fill="none"
@@ -221,7 +232,6 @@ export default function Example() {
                                                         />
                                                     </svg>
                                                 </Popover.Button>
-
                                             </div>
                                             <a
                                                 href="#"
@@ -256,9 +266,6 @@ export default function Example() {
                     </>
                 )}
             </Popover>
-
-
         </div>
-
     );
 }

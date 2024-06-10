@@ -36,7 +36,7 @@ function CoppyRight() {
                     </ul>
                 </div>
             </div>
-            <div className="fixed bottom-10 z-0 p-3 md:p-0 right-10 ">
+            <div className="fixed bottom-10 z-10 p-3 md:p-0 right-10 ">
                 <b className="bottom-0 ">
                     © Minh Nguyen
                 </b>
