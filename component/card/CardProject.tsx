@@ -9,6 +9,7 @@ import Sim from '../../public/sim-card.png';
 import Building from "../../src/svg/Building";
 import Programer from "../../src/svg/Programer";
 import Skill from "../../src/svg/skill";
+import Clock from "../../src/svg/Clock";
 export default function CardProject() {
     const [swiperRef, setSwiperRef] = useState(null);
     return (
@@ -27,11 +28,29 @@ export default function CardProject() {
                     >
                         <SwiperSlide>
                             <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <img src="../usa.jpg" alt="" />
+
+                                <div className="px-6 py-4 pb-0">
+                                    <div className="font-bold text-base text-gray-600">
+                                        WEB BÁN HÀNG
+                                    </div>
+                                    <div className="text-blue-400">
+                                        <a href="https://mobifonehanoi.vn/">Đi đến website</a>
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>  Tạo các module cho core của công ty,  thiết kế database , api , cho từng module , đẩy module lên composer , sử dụng module để tạo nhanh các website.
+                                    </div>
+                                </div>
+
                                 <div className="px-6 py-4">
                                     <div className="flex space-x-2 items-center mb-2">
                                         <Building width={20} />
                                         <div className="font-bold text-base text-gray-600 ">VMMS</div>
+                                    </div>
+                                    <div className="flex space-x-2 items-center mb-2">
+                                        <Clock width={20} />
+                                        <div className=" text-sm text-gray-600 ">
+                                            11/2019 - 08-2020
+                                        </div>
                                     </div>
                                     <div className="flex space-x-2 items-center mb-2">
                                         <Programer width={20} />
