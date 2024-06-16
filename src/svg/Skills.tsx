@@ -1,16 +1,16 @@
 import PropTypes from "prop-types";
 
-Skill.propTypes = {
+Skills.propTypes = {
     width: PropTypes.number,
     color: PropTypes.string,
 };
-Skill.defaultProps = {
+Skills.defaultProps = {
     width: 10,
     color: "white",
 };
 
 
-function Skill(props) {
+function Skills(props) {
     const { width, color } = props;
     return (
         <img width={width} src="/skill.png" alt="" />
@@ -18,4 +18,4 @@ function Skill(props) {
     );
 }
 
-export default Skill;
+export default Skills;

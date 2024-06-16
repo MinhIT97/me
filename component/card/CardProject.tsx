@@ -4,12 +4,12 @@ import { Mousewheel } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-import Image from "next/image";
-import Sim from '../../public/sim-card.png';
 import Building from "../../src/svg/Building";
 import Programer from "../../src/svg/Programer";
-import Skill from "../../src/svg/skill";
 import Clock from "../../src/svg/Clock";
+import Skills from "../../src/svg/Skills";
+
+
 export default function CardProject() {
     const [swiperRef, setSwiperRef] = useState(null);
     return (
@@ -58,7 +58,7 @@ export default function CardProject() {
                                     </div>
 
                                     <div className="flex space-x-2">
-                                        <Skill width={20} />
+                                        <Skills width={20} />
                                         <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Laravel</span>
                                         <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Javascript</span>
                                     </div>
