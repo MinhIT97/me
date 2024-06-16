@@ -2,13 +2,14 @@ import { ReactElement } from "react";
 import Example from "../component/Header";
 import Layout from "../component/layout/layout";
 import styles from "../styles/Home.module.scss";
+import CardProject from '../component/card/CardProject';
 
 function Project() {
     return (
-        <div>
-            <main className={styles.test}>
-            </main>
-        </div>
+
+
+        <CardProject />
+
     )
 }
 

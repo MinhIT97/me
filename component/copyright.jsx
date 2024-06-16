@@ -7,7 +7,7 @@ import EmailIcon from '@material-ui/icons/Email';
 function CoppyRight() {
     return (
         <div>
-            <div className="fixed bottom-10 z-0 p-3 md:p-0">
+            <div className="fixed bottom-10 z-10 p-3 md:p-0">
                 <div className="flex justify-between px-10 m-auto">
                     <ul className="gap gap-y-4 grid">
                         <li> <b style={{ writingMode: 'vertical-rl' }}>Find me</b> </li>
