@@ -37,7 +37,24 @@ export default function CardProject() {
                                         <a href="https://mobifonehanoi.vn/">Đi đến website</a>
                                     </div>
                                     <div>
-                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>  Tạo các module cho core của công ty,  thiết kế database , api , cho từng module , đẩy module lên composer , sử dụng module để tạo nhanh các website.
+                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>
+                                        <ul className="list-inside list-disc pl-2">
+                                            <li>
+                                                Tạo các module cho core của công ty.
+                                            </li>
+                                            <li>
+                                                Thiết kế database.
+                                            </li>
+                                            <li>
+                                                RESTful API.
+                                            </li>
+                                            <li>
+                                                Đẩy module lên packagist. <a className="text-blue-400" href="https://packagist.org/search/?query=webpress">Link tham khảo</a>
+                                            </li>
+                                            <li>
+                                                Sử dụng module để tạo nhanh các website.
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
 
@@ -67,11 +84,44 @@ export default function CardProject() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <img src="../usa.jpg" alt="" />
+                                <div className="px-6 py-4 pb-0">
+                                    <div className="font-bold text-base text-gray-600">
+                                        WEB CRM
+                                    </div>
+                                    <div className="text-blue-400">
+                                        <a href="https://bizfly.vn/giai-phap/bizfly-crm.html">Đi đến website</a>
+                                    </div>
+                                    <div>
+                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>
+                                        <ul className="list-inside list-disc pl-2">
+                                            <li>
+                                                Phát triển hệ thống CRM quản lý khách hàng.
+                                            </li>
+                                            <li>
+                                                Phát  triển các tính năng  báo cáo thống kê.
+                                            </li>
+                                            <li>
+                                                Phân quyền, Export excel, Push Notification.
+                                            </li>
+                                            <li>
+                                                Sử dụng module để tạo nhanh các website.
+                                            </li>
+                                            <li>
+                                                Mã hóa bảo mật, Send sms, Tích hợp Harvan, Kiotviet, Janco.
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
                                 <div className="px-6 py-4">
                                     <div className="flex space-x-2 items-center mb-2">
                                         <Building width={20} />
                                         <div className="font-bold text-base text-gray-600 ">VCCorp</div>
+                                    </div>
+                                    <div className="flex space-x-2 items-center mb-2">
+                                        <Clock width={20} />
+                                        <div className=" text-sm text-gray-600 ">
+                                            08/2020 - 06/2022
+                                        </div>
                                     </div>
                                     <div className="flex space-x-2 items-center mb-2">
                                         <Programer width={20} />
@@ -86,7 +136,7 @@ export default function CardProject() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <img src="../usa.jpg" alt="" />
+
                                 <div className="px-6 py-4">
                                     <div className="flex space-x-2 items-center mb-2">
                                         <Building width={20} />
@@ -105,7 +155,6 @@ export default function CardProject() {
                         </SwiperSlide>
                         <SwiperSlide>
                             <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <img src="../usa.jpg" alt="" />
                                 <div className="px-6 py-4">
                                     <div className="flex space-x-2 items-center mb-2">
                                         <Building width={20} />
