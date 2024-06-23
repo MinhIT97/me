@@ -119,9 +119,9 @@ export default function Example() {
                             <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10 ">
                                 <div className="flex justify-start lg:w-0 lg:flex-1">
                                     <span className="uppercase font-sans font-semibold text-xl">
-                                    <Link href="/">
-                                    Minh Nguyen
-                                    </Link>   
+                                        <Link href="/">
+                                            Minh Nguyen
+                                        </Link>
                                     </span>
                                 </div>
                                 <div className="-mr-2 -my-2 md:hidden">
