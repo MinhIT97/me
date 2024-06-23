@@ -119,7 +119,9 @@ export default function Example() {
                             <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10 ">
                                 <div className="flex justify-start lg:w-0 lg:flex-1">
                                     <span className="uppercase font-sans font-semibold text-xl">
-                                        Minh Nguyen
+                                    <Link href="/">
+                                    Minh Nguyen
+                                    </Link>   
                                     </span>
                                 </div>
                                 <div className="-mr-2 -my-2 md:hidden">
@@ -136,37 +138,29 @@ export default function Example() {
                                         <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
                                             <b>{trans.home.home}</b>
                                         </a>
-                                    </Link> 
+                                    </Link>
                                     <Link href="/projects">
                                         <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
                                             <b> {trans.home.projects}</b>
                                         </a>
                                     </Link>
-
-                                    <a
-                                        href="#skills"
-                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
-                                    >
-                                        <b> {trans.home.skills}</b>
-                                    </a>
-                                    <a
-                                        href="#experiences"
-                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
-                                    >
-                                        <b>{trans.home.experiences}</b>
-                                    </a>
-                                    <a
+                                    <Link href="/about">
+                                        <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
+                                            <b> {trans.home.about}</b>
+                                        </a>
+                                    </Link>
+                                    {/* <a
                                         href="#services"
                                         className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
                                     >
                                         <b> {trans.home.services}</b>
-                                    </a>
-                                    <a
+                                    </a> */}
+                                    {/* <a
                                         href="#contact"
                                         className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
                                     >
                                         <b>{trans.home.contact}</b>
-                                    </a>
+                                    </a> */}
                                     <div className="flex space-x-2 languageToggleDesktop">
                                         {router.locales.map((locale) => (
                                             <div key={locale}>
