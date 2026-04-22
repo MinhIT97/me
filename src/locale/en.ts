@@ -240,5 +240,11 @@ export default {
     footer: {
         jobTitle: "Full-Stack Developer · Hanoi, Vietnam",
         builtWith: "Built with Next.js & ❤️"
+    },
+    blog: {
+        badge: "✦ Latest Insights",
+        title: "Tech & Thoughts",
+        viewAll: "View All Stories",
+        readMore: "Read More"
     }
 }

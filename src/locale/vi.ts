@@ -240,5 +240,11 @@ export default {
     footer: {
         jobTitle: "Full-Stack Developer · Hà Nội, Việt Nam",
         builtWith: "Được xây dựng bằng Next.js & ❤️"
+    },
+    blog: {
+        badge: "✦ Bài viết mới nhất",
+        title: "Công nghệ & Chia sẻ",
+        viewAll: "Xem tất cả bài viết",
+        readMore: "Đọc thêm"
     }
 }

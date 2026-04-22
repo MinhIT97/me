@@ -9,6 +9,7 @@ import Skills from "../component/Skills";
 import Experiences from "../component/Experiences";
 import MyProject from "../component/MyProject";
 import Contact from "../component/Contact";
+import Blog from "../component/Blog";
 import { Reveal } from "../component/Reveal";
 
 function Home() {
@@ -28,6 +29,9 @@ function Home() {
       </Reveal>
       <Reveal width="100%">
         <MyProject />
+      </Reveal>
+      <Reveal width="100%">
+        <Blog />
       </Reveal>
       <Reveal width="100%">
         <Contact />
