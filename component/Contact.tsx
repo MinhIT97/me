@@ -8,37 +8,42 @@ const Contact = () => {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        // Phải lưu tham chiếu form vào biến constant ngay tại đây
+        const form = e.currentTarget;
         setStatus('sending');
 
-        const formData = new FormData(e.currentTarget);
+        const formData = new FormData(form);
         formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
 
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
 
         try {
-            const res = await fetch("https://api.web3forms.com/submit", {
+            const response = await fetch("https://api.web3forms.com/submit", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
                     Accept: "application/json"
                 },
                 body: json
-            }).then((res) => res.json());
+            });
+
+            const res = await response.json();
 
             if (res.success) {
                 setStatus('success');
+                // Sử dụng biến form đã lưu thay vì e.currentTarget
+                form.reset();
                 setTimeout(() => setStatus('idle'), 3000);
-                e.currentTarget.reset();
             } else {
                 console.error("Web3Forms Error:", res);
                 setStatus('idle');
-                alert("Gửi tin nhắn thất bại. Vui lòng thử lại sau.");
+                alert(res.message || "Gửi tin nhắn thất bại. Vui lòng thử lại sau.");
             }
         } catch (error) {
             console.error("Submit Error:", error);
             setStatus('idle');
-            alert("Có lỗi xảy ra. Vui lòng kiểm tra kết nối mạng.");
+            alert("Có lỗi xảy ra. Vui lòng kiểm tra lại kết nối mạng.");
         }
     };
 
