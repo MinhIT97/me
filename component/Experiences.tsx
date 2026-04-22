@@ -1,4 +1,5 @@
 import useTrans from "../src/hooks/useTrans";
+import { motion } from "framer-motion";
 
 
 
@@ -17,14 +18,78 @@ const techColors: Record<string, string> = {
     Javascript: '#F7DF1E',
 };
 
-function TimelineItem({ item, index }: { item: any; index: number }) {
+function TimelineItem({ item, index, isLast }: { item: any; index: number; isLast: boolean }) {
     const isEdu = item.type === 'education';
     const trans = useTrans();
 
     return (
-        <div className="timeline-item">
-            <div
-                className="glass-card p-6 rounded-2xl"
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="relative pl-12 pb-12 last:pb-0"
+        >
+            {/* Timeline Line Connector */}
+            <div 
+                className="absolute left-[7.5px] top-2 bottom-0 w-px"
+                style={{ 
+                    background: isLast 
+                        ? `linear-gradient(to bottom, ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}, transparent)` 
+                        : (isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'),
+                    boxShadow: isLast 
+                        ? `0 0 8px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}33`
+                        : `0 0 8px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}66`
+                }}
+            />
+
+            {/* Timeline Node (Firefly Effect) */}
+            <motion.div 
+                animate={{ 
+                    y: [0, -3, 0, 3, 0],
+                    x: [0, 2, 0, -2, 0],
+                    scale: [1, 1.1, 1],
+                    opacity: [0.7, 1, 0.7]
+                }}
+                transition={{ 
+                    duration: 4 + index, 
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+                className="absolute left-0 top-2 w-4 h-4 rounded-full flex items-center justify-center z-10"
+                style={{ 
+                    background: 'var(--bg-primary)',
+                    border: `2px solid ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}`,
+                    boxShadow: `0 0 15px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}`
+                }}
+            >
+                <motion.div 
+                    animate={{ 
+                        opacity: [0.4, 1, 0.4],
+                        scale: [0.8, 1.2, 0.8]
+                    }}
+                    transition={{ 
+                        duration: 2 + index * 0.5, 
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                    className="w-1.5 h-1.5 rounded-full"
+                    style={{ 
+                        background: isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)',
+                        boxShadow: `0 0 10px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}`
+                    }}
+                />
+            </motion.div>
+
+            <motion.div
+                whileHover={{ y: -5, boxShadow: `0 20px 40px rgba(0,0,0,0.4)` }}
+                className="glass-card p-6 rounded-2xl relative"
+                style={{
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--border-subtle)',
+                    borderLeft: `2px solid ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}44`,
+                    boxShadow: `15px 15px 30px rgba(0,0,0,0.3), inset 0 0 20px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}05`
+                }}
             >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-4">
@@ -38,7 +103,7 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
                         <div className="flex items-center gap-2">
                             <span
                                 className="text-sm font-semibold"
-                                style={{ color: 'var(--accent-secondary)' }}
+                                style={{ color: isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)' }}
                             >
                                 {item.company || item.school}
                             </span>
@@ -69,8 +134,8 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
                         <span
                             className="px-3 py-1 rounded-full text-xs font-medium"
                             style={{
-                                background: 'rgba(108, 99, 255, 0.1)',
-                                border: '1px solid rgba(108, 99, 255, 0.2)',
+                                background: 'rgba(108, 99, 255, 0.05)',
+                                border: '1px solid var(--border-subtle)',
                                 color: 'var(--text-secondary)',
                             }}
                         >
@@ -81,11 +146,11 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
 
                 {/* Details / Responsibilities */}
                 {(item.details || item.responsibilities) && (
-                    <ul className="space-y-1.5 mb-4">
-                        {(item.details || item.responsibilities).map((item: string, i: number) => (
-                            <li key={i} className="flex items-start gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                                <span style={{ color: 'var(--accent-primary)', marginTop: 4, flexShrink: 0 }}>▸</span>
-                                {item}
+                    <ul className="space-y-2 mb-4">
+                        {(item.details || item.responsibilities).map((detail: string, i: number) => (
+                            <li key={i} className="flex items-start gap-2 text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                                <span style={{ color: isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)', marginTop: 4, flexShrink: 0 }}>▸</span>
+                                {detail}
                             </li>
                         ))}
                     </ul>
@@ -93,15 +158,15 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
 
                 {/* Tech tags */}
                 {item.tech && (
-                    <div className="flex flex-wrap gap-2 mt-4">
+                    <div className="flex flex-wrap gap-2 mt-4 pt-4 border-t border-gray-800" style={{ borderColor: 'var(--border-subtle)' }}>
                         {item.tech.map((tech: string) => (
                             <span
                                 key={tech}
-                                className="px-2 py-0.5 rounded text-xs font-medium"
+                                className="px-2 py-0.5 rounded-md text-[10px] font-bold uppercase tracking-wider transition-colors hover:bg-opacity-20"
                                 style={{
-                                    background: `rgba(${techColors[tech] ? parseInt(techColors[tech].slice(1, 3), 16) : 108}, ${techColors[tech] ? parseInt(techColors[tech].slice(3, 5), 16) : 99}, ${techColors[tech] ? parseInt(techColors[tech].slice(5, 7), 16) : 255}, 0.12)`,
-                                    border: `1px solid rgba(108, 99, 255, 0.2)`,
-                                    color: 'var(--accent-secondary)',
+                                    background: 'rgba(255, 255, 255, 0.03)',
+                                    border: `1px solid ${techColors[tech] || 'var(--border-subtle)'}44`,
+                                    color: techColors[tech] || 'var(--text-muted)',
                                 }}
                             >
                                 {tech}
@@ -109,8 +174,8 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
                         ))}
                     </div>
                 )}
-            </div>
-        </div>
+            </motion.div>
+        </motion.div>
     );
 }
 
@@ -159,9 +224,14 @@ function Experiences() {
                                 {trans.experiences.education}
                             </h3>
                         </div>
-                        <div className="timeline">
+                        <div className="relative">
                             {trans.experiences.educationData.map((item: any, i: number) => (
-                                <TimelineItem key={i} item={item} index={i} />
+                                <TimelineItem 
+                                    key={i} 
+                                    item={{...item, type: 'education'}} 
+                                    index={i} 
+                                    isLast={i === trans.experiences.educationData.length - 1} 
+                                />
                             ))}
                         </div>
                     </div>
@@ -181,9 +251,14 @@ function Experiences() {
                                 {trans.experiences.workExperience}
                             </h3>
                         </div>
-                        <div className="timeline">
+                        <div className="relative">
                             {trans.experiences.workData.map((item: any, i: number) => (
-                                <TimelineItem key={i} item={item} index={i} />
+                                <TimelineItem 
+                                    key={i} 
+                                    item={{...item, type: 'work'}} 
+                                    index={i} 
+                                    isLast={i === trans.experiences.workData.length - 1} 
+                                />
                             ))}
                         </div>
                     </div>

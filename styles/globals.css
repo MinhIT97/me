@@ -583,40 +583,10 @@ a {
 .delay-700 { animation-delay: 0.7s; }
 
 /* ============================================
-   TIMELINE (Experiences)
+   TIMELINE (Experiences) - Handled in Component
    ============================================ */
 .timeline {
   position: relative;
-  padding-left: 2rem;
-}
-
-.timeline::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 8px;
-  bottom: 8px;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--accent-primary), var(--accent-secondary));
-  border-radius: 2px;
-}
-
-.timeline-item {
-  position: relative;
-  margin-bottom: 2rem;
-}
-
-.timeline-item::before {
-  content: '';
-  position: absolute;
-  left: -2.4rem;
-  top: 1.2rem;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: var(--gradient-primary);
-  border: 2px solid var(--bg-primary);
-  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.3);
 }
 
 /* ============================================
