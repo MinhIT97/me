@@ -11,7 +11,7 @@ const Contact = () => {
         setStatus('sending');
 
         const formData = new FormData(e.currentTarget);
-        formData.append("access_key", "f147ac5c-75fe-4678-955d-34ac82bd68f2");
+        formData.append("access_key", process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "");
 
         const object = Object.fromEntries(formData);
         const json = JSON.stringify(object);
