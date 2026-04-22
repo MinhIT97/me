@@ -11,6 +11,7 @@ import figma from '../../public/figma.png';
 import nestjs from '../../public/nestjs.png';
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import FloatingBubbles from "../FloatingBubbles";
 import { motion } from "framer-motion";
 
@@ -87,6 +88,7 @@ function TypewriterText({ texts }: { texts: string[] }) {
 
 function Me() {
     const yearsDifference = calculateYearsDifference();
+    const router = useRouter();
     const trans = useTrans();
 
     const stats = [
@@ -140,7 +142,7 @@ function Me() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen pt-20 pb-16">
 
                     {/* Left: Text Content */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, x: -30 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -190,7 +192,7 @@ function Me() {
                         </motion.h1>
 
                         {/* Typewriter Role */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.4, duration: 0.4 }}
@@ -215,7 +217,7 @@ function Me() {
                         </motion.p>
 
                         {/* CTA Buttons */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0, y: 15 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.6, duration: 0.4 }}
@@ -235,18 +237,36 @@ function Me() {
                                     </svg>
                                 </a>
                             </Link>
+                            <motion.a
+                                href="/Middle-PHP-Laravel-Nguyen-Van-Minh-0986082324.pdf"
+                                download
+                                whileHover={{ y: -5, scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all"
+                                style={{
+                                    background: 'rgba(255, 255, 255, 0.05)',
+                                    border: '1px solid var(--border-accent)',
+                                    color: 'var(--text-primary)',
+                                    backdropFilter: 'blur(10px)',
+                                }}
+                            >
+                                <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                                {router.locale === 'vi' ? 'Tải CV' : 'Download CV'}
+                            </motion.a>
                         </motion.div>
 
                         {/* Stats */}
-                        <motion.div 
+                        <motion.div
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ delay: 0.7, duration: 0.4 }}
                             className="flex flex-wrap gap-8"
                         >
                             {stats.map((stat, i) => (
-                                <motion.div 
-                                    key={i} 
+                                <motion.div
+                                    key={i}
                                     className="text-center"
                                     whileHover={{ y: -5 }}
                                 >
@@ -271,7 +291,7 @@ function Me() {
                     </motion.div>
 
                     {/* Right: Avatar + Floating Icons */}
-                    <motion.div 
+                    <motion.div
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 1, ease: "easeOut" }}
