@@ -9,16 +9,29 @@ import Skills from "../component/Skills";
 import Experiences from "../component/Experiences";
 import MyProject from "../component/MyProject";
 import Contact from "../component/Contact";
+import { Reveal } from "../component/Reveal";
 
 function Home() {
   return (
     <div className="bg-portfolio-bg text-portfolio-200">
-      <Me />
-      <About />
-      <Skills />
-      <Experiences />
-      <MyProject />
-      <Contact />
+      <Reveal width="100%">
+        <Me />
+      </Reveal>
+      <Reveal width="100%">
+        <About />
+      </Reveal>
+      <Reveal width="100%">
+        <Skills />
+      </Reveal>
+      <Reveal width="100%">
+        <Experiences />
+      </Reveal>
+      <Reveal width="100%">
+        <MyProject />
+      </Reveal>
+      <Reveal width="100%">
+        <Contact />
+      </Reveal>
     </div>
   );
 }

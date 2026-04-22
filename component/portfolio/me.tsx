@@ -12,6 +12,7 @@ import nestjs from '../../public/nestjs.png';
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import FloatingBubbles from "../FloatingBubbles";
+import { motion } from "framer-motion";
 
 const calculateYearsDifference = () => {
     const startDate = new Date(2019, 10);
@@ -139,9 +140,17 @@ function Me() {
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen pt-20 pb-16">
 
                     {/* Left: Text Content */}
-                    <div className="animate-fade-in-left">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6, ease: "easeOut" }}
+                        className="hero-text"
+                    >
                         {/* Badge */}
-                        <div
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.1, duration: 0.4 }}
                             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-sm font-medium"
                             style={{
                                 background: 'var(--bg-badge)',
@@ -154,33 +163,47 @@ function Me() {
                                 style={{ background: 'var(--accent-green)', boxShadow: '0 0 8px var(--accent-green)', animation: 'pulse-glow 2s infinite' }}
                             />
                             {trans.me.availableForWork}
-                        </div>
+                        </motion.div>
 
                         {/* Greeting */}
-                        <p
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.2, duration: 0.4 }}
                             className="text-lg font-medium mb-2"
                             style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-heading)' }}
                         >
                             {trans.me.hello}
-                        </p>
+                        </motion.p>
 
                         {/* Name */}
-                        <h1
+                        <motion.h1
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3, duration: 0.5 }}
                             className="text-5xl md:text-6xl lg:text-7xl font-bold mb-4 leading-tight"
                             style={{ fontFamily: 'var(--font-heading)' }}
                         >
                             <span style={{ color: 'var(--text-primary)' }}>Nguyễn</span>
                             <br />
                             <span className="gradient-text">Văn Minh</span>
-                        </h1>
+                        </motion.h1>
 
                         {/* Typewriter Role */}
-                        <div className="text-2xl md:text-3xl font-semibold mb-6 h-10">
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.4, duration: 0.4 }}
+                            className="text-2xl md:text-3xl font-semibold mb-6 h-10"
+                        >
                             <TypewriterText texts={roles} />
-                        </div>
+                        </motion.div>
 
                         {/* Description */}
-                        <p
+                        <motion.p
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.5, duration: 0.4 }}
                             className="text-base md:text-lg mb-8 leading-relaxed max-w-lg"
                             style={{ color: 'var(--text-secondary)' }}
                         >
@@ -189,10 +212,15 @@ function Me() {
                             <br />{trans.me.description3} <strong style={{ color: 'var(--accent-secondary)' }}>PHP/Laravel</strong>,{' '}
                             <strong style={{ color: 'var(--accent-secondary)' }}>React</strong> &amp;{' '}
                             <strong style={{ color: 'var(--accent-secondary)' }}>Next.js</strong>.
-                        </p>
+                        </motion.p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-4 mb-10">
+                        <motion.div 
+                            initial={{ opacity: 0, y: 15 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6, duration: 0.4 }}
+                            className="flex flex-wrap gap-4 mb-10"
+                        >
                             <a href="mailto:minh0608197@gmail.com" className="btn-primary">
                                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -207,12 +235,21 @@ function Me() {
                                     </svg>
                                 </a>
                             </Link>
-                        </div>
+                        </motion.div>
 
                         {/* Stats */}
-                        <div className="flex flex-wrap gap-8">
+                        <motion.div 
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ delay: 0.7, duration: 0.4 }}
+                            className="flex flex-wrap gap-8"
+                        >
                             {stats.map((stat, i) => (
-                                <div key={i} className="text-center">
+                                <motion.div 
+                                    key={i} 
+                                    className="text-center"
+                                    whileHover={{ y: -5 }}
+                                >
                                     <div
                                         className="text-3xl font-bold"
                                         style={{
@@ -228,13 +265,18 @@ function Me() {
                                     <div className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
                                         {stat.label}
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
 
                     {/* Right: Avatar + Floating Icons */}
-                    <div className="relative flex items-center justify-center animate-fade-in-up delay-300">
+                    <motion.div 
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="relative flex items-center justify-center"
+                    >
                         {/* Glow ring */}
                         <div
                             className="absolute rounded-full"
@@ -248,7 +290,9 @@ function Me() {
                         />
 
                         {/* Avatar Container */}
-                        <div
+                        <motion.div
+                            whileHover={{ scale: 1.02 }}
+                            transition={{ duration: 0.3 }}
                             className="relative flex items-end justify-center overflow-hidden"
                             style={{
                                 width: 320,
@@ -268,12 +312,15 @@ function Me() {
                                 objectFit="contain"
                                 objectPosition="center bottom"
                             />
-                        </div>
+                        </motion.div>
 
                         {/* Floating Tech Icons */}
-                        {techIcons.map((icon) => (
-                            <div
+                        {techIcons.map((icon, index) => (
+                            <motion.div
                                 key={icon.alt}
+                                initial={{ opacity: 0, scale: 0.5 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.8 + (index * 0.05), duration: 0.4 }}
                                 className="absolute flex items-center justify-center rounded-xl"
                                 style={{
                                     ...icon.style,
@@ -297,9 +344,9 @@ function Me() {
                                     height={icon.size}
                                     objectFit="contain"
                                 />
-                            </div>
+                            </motion.div>
                         ))}
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 
