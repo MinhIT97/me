@@ -1,48 +1,6 @@
 import useTrans from "../src/hooks/useTrans";
 
-const educationData = [
-    {
-        degree: "Bachelor of Information Technology",
-        school: "HUMG",
-        schoolFull: "Hanoi University of Mining and Geology",
-        period: "2015 – 2020",
-        details: [
-            "Specialization: Software Technology",
-            "Graduation GPA: 2.42 / 4.0",
-        ],
-        type: "education",
-    },
-];
 
-const workData = [
-    {
-        title: "Software Developer",
-        company: "VMMS",
-        period: "11/2019 – 12/2020",
-        responsibilities: [
-            "Module development",
-            "API design & integration",
-            "Database design",
-            "Frontend development",
-        ],
-        tech: ["Laravel", "jQuery", "Angular", "React", "MySQL"],
-        type: "work",
-    },
-    {
-        title: "Software Developer",
-        company: "VCcorp",
-        period: "12/2020 – Present",
-        responsibilities: [
-            "Full-stack web development",
-            "Module development & maintenance",
-            "API design & integration",
-            "Database architecture",
-        ],
-        tech: ["Laravel", "MongoDB", "Jenkins", "jQuery", "MithrilJS"],
-        type: "work",
-        current: true,
-    },
-];
 
 const techColors: Record<string, string> = {
     Laravel: '#FF2D20',
@@ -55,10 +13,13 @@ const techColors: Record<string, string> = {
     MithrilJS: '#7b63ff',
     'Node.js': '#339933',
     'Next.js': '#ffffff',
+    Vuejs: '#4FC08D',
+    Javascript: '#F7DF1E',
 };
 
 function TimelineItem({ item, index }: { item: any; index: number }) {
     const isEdu = item.type === 'education';
+    const trans = useTrans();
 
     return (
         <div className="timeline-item">
@@ -98,13 +59,13 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
                                     color: 'var(--accent-green)',
                                 }}
                             >
-                                <span
-                                    className="w-1.5 h-1.5 rounded-full"
-                                    style={{ background: 'var(--accent-green)', boxShadow: '0 0 6px var(--accent-green)' }}
-                                />
-                                Current
-                            </span>
-                        )}
+                                    <span
+                                        className="w-1.5 h-1.5 rounded-full"
+                                        style={{ background: 'var(--accent-green)', boxShadow: '0 0 6px var(--accent-green)' }}
+                                    />
+                                    {trans.experiences.current}
+                                </span>
+                            )}
                         <span
                             className="px-3 py-1 rounded-full text-xs font-medium"
                             style={{
@@ -170,13 +131,13 @@ function Experiences() {
                             color: 'var(--accent-secondary)',
                         }}
                     >
-                        ✦ My Journey
+                        {trans.experiences.badge}
                     </div>
                     <h2 className="section-title section-title-center">
-                        Education &amp; Experience
+                        {trans.experiences.title}
                     </h2>
                     <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-                        My academic background and professional journey as a software developer.
+                        {trans.experiences.subtitle}
                     </p>
                 </div>
 
@@ -199,7 +160,7 @@ function Experiences() {
                             </h3>
                         </div>
                         <div className="timeline">
-                            {educationData.map((item, i) => (
+                            {trans.experiences.educationData.map((item: any, i: number) => (
                                 <TimelineItem key={i} item={item} index={i} />
                             ))}
                         </div>
@@ -217,11 +178,11 @@ function Experiences() {
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold" style={{ fontFamily: 'var(--font-heading)', color: 'var(--text-primary)' }}>
-                                Work Experience
+                                {trans.experiences.workExperience}
                             </h3>
                         </div>
                         <div className="timeline">
-                            {workData.map((item, i) => (
+                            {trans.experiences.workData.map((item: any, i: number) => (
                                 <TimelineItem key={i} item={item} index={i} />
                             ))}
                         </div>

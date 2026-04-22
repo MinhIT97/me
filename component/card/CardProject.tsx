@@ -9,85 +9,22 @@ import Programer from "../../src/svg/Programer";
 import Clock from "../../src/svg/Clock";
 import Skills from "../../src/svg/Skills";
 import TeamWork from "../../src/svg/TeamWork";
+import useTrans from "../../src/hooks/useTrans";
 
-const projects = [
-    {
-        title: "WEB BÁN HÀNG",
-        link: "https://mobifonehanoi.vn/",
-        tasks: [
-            "Tạo các module cho core của công ty.",
-            "Thiết kế database.",
-            "RESTful API.",
-            "Đẩy module lên packagist.",
-            "Sử dụng module để tạo nhanh các website."
-        ],
-        company: "VMMS",
-        period: "11/2019 - 08/2020",
-        role: "Nhân viên",
-        teamSize: 2,
-        techs: ["Laravel", "Javascript"]
-    },
-    {
-        title: "WEB CRM",
-        link: "https://bizfly.vn/giai-phap/bizfly-crm.html",
-        tasks: [
-            "Phát triển hệ thống CRM quản lý khách hàng.",
-            "Phát triển các tính năng báo cáo thống kê.",
-            "Phân quyền, Export excel, Push Notification.",
-            "Sử dụng module để tạo nhanh các website.",
-            "Mã hóa bảo mật, Send sms, Tích hợp Harvan, Kiotviet, Janco."
-        ],
-        company: "VCCorp",
-        period: "08/2020 - 06/2022",
-        role: "Nhân viên",
-        teamSize: 11,
-        techs: ["Laravel", "Javascript", "Mithril"]
-    },
-    {
-        title: "WEB HRTECH",
-        link: null,
-        tasks: [
-            "Phát triển hệ thống HRTECH quản lý ứng viên.",
-            "Xây dựng hệ thống HRTECH cho công ty Aeon Việt Nam.",
-            "Nhận yêu cầu khách hàng phân tích xây dựng chức năng.",
-            "RESTful API.",
-            "Sử dụng Vuejs để tạo website cho ứng viên và trang quản lý.",
-            "Tích hợp AI đánh giá điểm ứng viên."
-        ],
-        company: "Nissho Electronics",
-        period: "07/2022 - 05/2023",
-        role: "Nhân viên",
-        teamSize: 8,
-        techs: ["Laravel", "Javascript", "Vuejs"]
-    },
-    {
-        title: "WEB SURVEY",
-        link: null,
-        tasks: [
-            "Phát triển hệ thống quản lý tòa nhà cho UK.",
-            "Nhận yêu cầu khách hàng phân tích xây dựng chức năng.",
-            "Thiết kế database.",
-            "RESTful API."
-        ],
-        company: "Shine Vision",
-        period: "05/2023 - Hiện tại",
-        role: "Nhân viên",
-        teamSize: 10,
-        techs: ["Laravel", "Javascript"]
-    }
-];
+
 
 export default function CardProject() {
     const [swiperRef, setSwiperRef] = useState(null);
+    const trans = useTrans();
 
     return (
         <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', paddingTop: 100, paddingBottom: 60 }}>
             <div className="max-w-7xl mx-auto px-6">
                 
                 <div className="text-center mb-12">
-                    <h2 className="section-title section-title-center">Project Details</h2>
+                    <h2 className="section-title section-title-center">{trans.project.title}</h2>
                     <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-                        Chi tiết các dự án và kinh nghiệm làm việc thực tế.
+                        {trans.project.subtitle}
                     </p>
                 </div>
 
@@ -106,7 +43,7 @@ export default function CardProject() {
                         navigation={true}
                         className="mySwiper pb-12"
                     >
-                        {projects.map((project, index) => (
+                        {trans.project.projectsData.map((project: any, index: number) => (
                             <SwiperSlide key={index} className="h-auto">
                                 <div
                                     className="h-full flex flex-col rounded-2xl overflow-hidden transition-all duration-300"
@@ -133,7 +70,7 @@ export default function CardProject() {
                                                     className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
                                                     style={{ color: 'var(--accent-secondary)' }}
                                                 >
-                                                    Đi đến website
+                                                    {trans.project.goToWebsite}
                                                     <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                                     </svg>
@@ -142,7 +79,7 @@ export default function CardProject() {
                                         )}
 
                                         <div className="mt-4">
-                                            <div className="font-semibold text-sm mb-2" style={{ color: 'var(--text-muted)' }}>Công việc:</div>
+                                            <div className="font-semibold text-sm mb-2" style={{ color: 'var(--text-muted)' }}>{trans.project.tasks}</div>
                                             <ul className="space-y-1.5 pl-4">
                                                 {project.tasks.map((task, i) => (
                                                     <li key={i} className="text-sm list-disc" style={{ color: 'var(--text-secondary)' }}>
@@ -172,7 +109,7 @@ export default function CardProject() {
                                         
                                         <div className="flex items-center gap-3 mb-4">
                                             <div style={{ color: 'var(--accent-primary)' }}><TeamWork width={18} /></div>
-                                            <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>Team size: {project.teamSize}</div>
+                                            <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>{trans.project.teamSize} {project.teamSize}</div>
                                         </div>
 
                                         {/* Tech tags */}

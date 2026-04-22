@@ -83,7 +83,7 @@ function About() {
                                 6+
                             </div>
                             <div className="text-xs mt-0.5" style={{ color: 'var(--text-secondary)' }}>
-                                Years Experience
+                                {trans.about.yearsExperience}
                             </div>
                         </div>
                     </div>
@@ -99,7 +99,7 @@ function About() {
                                 color: 'var(--accent-secondary)',
                             }}
                         >
-                            ✦ About Me
+                            {trans.about.badge}
                         </div>
 
                         <h2 className="section-title mb-4">
@@ -110,7 +110,7 @@ function About() {
                             className="text-base md:text-lg leading-relaxed mb-8"
                             style={{ color: 'var(--text-secondary)' }}
                         >
-                            {trans.home.introduce} PHP, Laravel, React và Next.js. Tôi yêu thích xây dựng sản phẩm có hiệu suất cao, giao diện đẹp và trải nghiệm người dùng tốt.
+                            {trans.home.introduce}{trans.about.introSuffix}
                         </p>
 
                         {/* Skills grid */}
@@ -119,7 +119,7 @@ function About() {
                                 className="text-sm font-semibold uppercase tracking-wider mb-4"
                                 style={{ color: 'var(--text-muted)' }}
                             >
-                                Technologies I work with
+                                {trans.about.techWorking}
                             </h3>
                             <div className="flex flex-wrap gap-2">
                                 {skills.map((skill) => (
@@ -139,15 +139,15 @@ function About() {
                             }}
                         >
                             <div>
-                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>Name</div>
+                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>{trans.about.name}</div>
                                 <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>Nguyễn Văn Minh</div>
                             </div>
                             <div>
-                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>Location</div>
+                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>{trans.about.location}</div>
                                 <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>Hà Nội, Việt Nam</div>
                             </div>
                             <div>
-                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>Email</div>
+                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>{trans.about.email}</div>
                                 <a
                                     href="mailto:minh0608197@gmail.com"
                                     className="text-sm font-semibold transition-colors"
@@ -157,13 +157,13 @@ function About() {
                                 </a>
                             </div>
                             <div>
-                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>Status</div>
+                                <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>{trans.about.status}</div>
                                 <div className="flex items-center gap-1.5">
                                     <span
                                         className="w-2 h-2 rounded-full"
                                         style={{ background: 'var(--accent-green)', boxShadow: '0 0 6px var(--accent-green)' }}
                                     />
-                                    <span className="text-sm font-semibold" style={{ color: 'var(--accent-green)' }}>Available</span>
+                                    <span className="text-sm font-semibold" style={{ color: 'var(--accent-green)' }}>{trans.about.available}</span>
                                 </div>
                             </div>
                         </div>
@@ -175,7 +175,7 @@ function About() {
                             className="btn-primary inline-flex"
                         >
                             <FolderDownloadIcon width={18} />
-                            Download CV
+                            {trans.about.downloadCV}
                         </a>
                     </div>
                 </div>

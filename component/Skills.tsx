@@ -88,13 +88,13 @@ function Skills() {
                             color: 'var(--accent-secondary)',
                         }}
                     >
-                        ✦ My Skills
+                        {trans.skills.badge}
                     </div>
                     <h2 className="section-title section-title-center">
-                        Technical Expertise
+                        {trans.skills.title}
                     </h2>
                     <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
-                        Technologies I&apos;ve worked with across front-end, back-end, and tooling.
+                        {trans.skills.subtitle}
                     </p>
                 </div>
 
@@ -161,7 +161,7 @@ function Skills() {
                             }}
                         >
                             <div className="text-sm font-semibold mb-4" style={{ color: 'var(--text-muted)' }}>
-                                Tools & Environments
+                                {trans.skills.toolsEnv}
                             </div>
                             <div className="flex flex-wrap gap-2">
                                 {['Git', 'Docker', 'Jenkins', 'VS Code', 'Linux', 'Figma', 'Postman', 'Nginx'].map((tool) => (

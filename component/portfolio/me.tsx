@@ -89,9 +89,9 @@ function Me() {
     const trans = useTrans();
 
     const stats = [
-        { value: `${yearsDifference}+`, label: "Years Exp." },
-        { value: "15+", label: "Projects" },
-        { value: "2", label: "Companies" },
+        { value: `${yearsDifference}+`, label: trans.me.yearsExp },
+        { value: "15+", label: trans.me.projects },
+        { value: "4", label: trans.me.companies },
     ];
 
     return (
@@ -153,7 +153,7 @@ function Me() {
                                 className="w-2 h-2 rounded-full"
                                 style={{ background: 'var(--accent-green)', boxShadow: '0 0 8px var(--accent-green)', animation: 'pulse-glow 2s infinite' }}
                             />
-                            Available for work
+                            {trans.me.availableForWork}
                         </div>
 
                         {/* Greeting */}
@@ -161,7 +161,7 @@ function Me() {
                             className="text-lg font-medium mb-2"
                             style={{ color: 'var(--text-secondary)', fontFamily: 'var(--font-heading)' }}
                         >
-                            Hi, I&apos;m
+                            {trans.me.hello}
                         </p>
 
                         {/* Name */}
@@ -184,9 +184,9 @@ function Me() {
                             className="text-base md:text-lg mb-8 leading-relaxed max-w-lg"
                             style={{ color: 'var(--text-secondary)' }}
                         >
-                            Building high-performance web applications with over{' '}
-                            <strong style={{ color: 'var(--text-primary)' }}>{yearsDifference} years</strong> of experience.
-                            Specialized in <strong style={{ color: 'var(--accent-secondary)' }}>PHP/Laravel</strong>,{' '}
+                            {trans.me.description1}{' '}
+                            <strong style={{ color: 'var(--text-primary)' }}>{yearsDifference} {trans.me.description2}</strong>
+                            <br />{trans.me.description3} <strong style={{ color: 'var(--accent-secondary)' }}>PHP/Laravel</strong>,{' '}
                             <strong style={{ color: 'var(--accent-secondary)' }}>React</strong> &amp;{' '}
                             <strong style={{ color: 'var(--accent-secondary)' }}>Next.js</strong>.
                         </p>
@@ -197,11 +197,11 @@ function Me() {
                                 <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                                 </svg>
-                                Hire Me
+                                {trans.me.hireMe}
                             </a>
                             <Link href="/projects">
                                 <a className="btn-outline">
-                                    View Projects
+                                    {trans.me.viewProjects}
                                     <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                     </svg>
@@ -308,7 +308,7 @@ function Me() {
                 className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10"
                 style={{ color: 'var(--text-muted)', fontSize: '0.75rem' }}
             >
-                <span>Scroll down</span>
+                <span style={{ cursor: 'default' }}>{trans.me.scrollDown}</span>
                 <div
                     className="w-5 h-8 rounded-full flex items-start justify-center pt-1.5"
                     style={{ border: '1px solid var(--border-accent)' }}

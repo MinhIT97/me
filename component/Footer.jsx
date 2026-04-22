@@ -1,3 +1,5 @@
+import useTrans from "../src/hooks/useTrans";
+
 const socialLinks = [
     {
         name: "Facebook",
@@ -48,6 +50,7 @@ const socialLinks = [
 
 function Footer() {
     const year = new Date().getFullYear();
+    const trans = useTrans();
 
     return (
         <footer
@@ -86,7 +89,7 @@ function Footer() {
                             </span>
                         </div>
                         <p className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                            Full-Stack Developer · Hà Nội, Việt Nam
+                            {trans.footer.jobTitle}
                         </p>
                     </div>
 
@@ -128,7 +131,7 @@ function Footer() {
                     {/* Copyright */}
                     <div className="text-xs text-center md:text-right" style={{ color: 'var(--text-muted)' }}>
                         <div>© {year} Nguyễn Văn Minh</div>
-                        <div className="mt-1">Built with Next.js &amp; ❤️</div>
+                        <div className="mt-1">{trans.footer.builtWith}</div>
                     </div>
                 </div>
             </div>
