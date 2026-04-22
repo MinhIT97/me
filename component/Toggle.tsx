@@ -4,52 +4,49 @@ import React, { useEffect, useState } from 'react';
 
 const getInitialTheme = () => {
     if (typeof window !== 'undefined' && window.localStorage) {
-        const storedPrefs = window.localStorage.getItem('color-theme');
+        const storedPrefs = window.localStorage.getItem('theme');
         if (typeof storedPrefs === 'string') {
             return storedPrefs;
         }
     }
-
-    return 'light' // light theme as the default;
+    return 'dark'; // dark theme as the default;
 };
 
-
 function changeTheme(theme) {
-    localStorage.setItem('theme', theme);
-
-    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-        document.documentElement.classList.add('dark')
-    } else {
-        document.documentElement.classList.remove('dark')
+    if (typeof window !== 'undefined') {
+        window.localStorage.setItem('theme', theme);
+        if (theme === 'light') {
+            document.documentElement.setAttribute('data-theme', 'light');
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+        }
     }
 }
 
 const Toggle = () => {
-
     const [theme, setTheme] = useState(getInitialTheme);
 
     useEffect(() => {
         changeTheme(theme);
     }, [theme]);
 
-
-
     return (
-        <div className="transition  duration-100 ease-in-out rounded-full cursor-pointer ">
+        <button 
+            className="w-10 h-10 flex items-center justify-center rounded-xl transition-all"
+            style={{
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-subtle)',
+                color: 'var(--text-secondary)'
+            }}
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            title="Toggle Light/Dark Mode"
+        >
             {theme === 'dark' ? (
-                <SunIcon
-                    width={20}
-                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                    className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
-                />
+                <SunIcon width={20} className="hover:text-[var(--accent-primary)] transition-colors" />
             ) : (
-                <MoonIcon
-                    width={20}
-                    onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                    className="text-gray-500 dark:text-gray-400 text-2xl cursor-pointer"
-                />
+                <MoonIcon width={20} className="hover:text-[var(--accent-primary)] transition-colors" />
             )}
-        </div>
+        </button>
     );
 };
 
