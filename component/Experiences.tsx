@@ -30,18 +30,47 @@ function TimelineItem({ item, index, isLast }: { item: any; index: number; isLas
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className="relative pl-12 pb-12 last:pb-0"
         >
-            {/* Timeline Line Connector */}
+            {/* Timeline Line & Light Beam Container */}
             <div 
-                className="absolute left-[7.5px] top-2 bottom-0 w-px"
+                className="absolute z-0"
                 style={{ 
-                    background: isLast 
-                        ? `linear-gradient(to bottom, ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}, transparent)` 
-                        : (isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'),
-                    boxShadow: isLast 
-                        ? `0 0 8px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}33`
-                        : `0 0 8px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}66`
+                    left: '7px',
+                    top: '32px',
+                    bottom: '8px',
+                    width: '100px', // Large area for light to spread
+                    pointerEvents: 'none'
                 }}
-            />
+            >
+                {/* The Neon Beam casting right */}
+                <div 
+                    style={{
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        width: '100%',
+                        background: `linear-gradient(90deg, ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}80, transparent)`,
+                        filter: 'blur(12px)',
+                        opacity: 0.6
+                    }}
+                />
+
+                {/* The Sharp Core Line */}
+                <div 
+                    style={{ 
+                        position: 'absolute',
+                        left: 0,
+                        top: 0,
+                        bottom: 0,
+                        width: '2px',
+                        borderRadius: '2px',
+                        background: isLast 
+                            ? `linear-gradient(to bottom, ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}, transparent)` 
+                            : (isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'),
+                        boxShadow: `0 0 10px ${isEdu ? 'var(--accent-primary)' : 'var(--accent-secondary)'}`
+                    }}
+                />
+            </div>
 
             {/* Timeline Node (Firefly Effect) */}
             <motion.div 
