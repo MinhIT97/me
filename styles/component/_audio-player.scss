@@ -11,7 +11,7 @@
     height: 1px;
     width: 3px;
     display: inline-block;
-    background-color: black;
+    background-color: var(--text-primary);
     bottom: 0;
     position: absolute;
     &.noAnim {
