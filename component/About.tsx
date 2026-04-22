@@ -170,7 +170,7 @@ function About() {
 
                         {/* Download CV */}
                         <a
-                            href="../NguyenVanMinh-php-0986082324.pdf"
+                            href="../Middle-PHP-Laravel-Nguyen-Van-Minh-0986082324.pdf"
                             target="_blank"
                             className="btn-primary inline-flex"
                         >
