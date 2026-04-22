@@ -8,6 +8,7 @@ import About from "../component/About";
 import Skills from "../component/Skills";
 import Experiences from "../component/Experiences";
 import MyProject from "../component/MyProject";
+import Contact from "../component/Contact";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Skills />
       <Experiences />
       <MyProject />
+      <Contact />
     </div>
   );
 }

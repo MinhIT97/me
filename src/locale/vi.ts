@@ -30,7 +30,40 @@ export default {
     },
     myProject: {
         myProject: "Dự án tiêu biểu",
-        content: "Dưới đây là một số dự án nổi bật mà tôi đã tham gia phát triển và tối ưu."
+        content: "Danh sách các dự án tiêu biểu mà tôi đã tham gia phát triển, từ ứng dụng web full-stack đến các giải pháp phần mềm doanh nghiệp.",
+        featured: "Dự án nổi bật",
+        viewProject: "Xem Dự án",
+        projectsData: [
+            {
+                title: "Website bán SIM",
+                description: "Website bán SIM được phát triển với hiệu suất cao, chuẩn SEO, phù hợp mục đích bán hàng online. Trang quản trị phát triển bằng Angular, mang đến trải nghiệm tuyệt vời cho admin.",
+                image: "/Group67.png",
+                link: "https://mobifonehanoi.vn/",
+                tags: ["Laravel", "Angular", "SEO", "MySQL", "jQuery"],
+                color: "#6c63ff",
+            },
+            {
+                title: "Phần mềm CRM",
+                description: "Phần mềm CRM giúp doanh nghiệp quản lý các hoạt động tương tác, chăm sóc khách hàng, hình thành mối quan hệ khách hàng trung thành trong doanh nghiệp.",
+                image: "/Group68.png",
+                link: "https://bizfly.vn/giai-phap/bizfly-crm.html",
+                tags: ["Laravel", "MongoDB", "MithrilJS", "Jenkins"],
+                color: "#00d4ff",
+            },
+        ]
+    },
+    contact: {
+        badge: "✦ Liên hệ",
+        title: "Hãy cùng hợp tác",
+        subtitle: "Bạn có ý tưởng cho một dự án hoặc chỉ muốn chào hỏi? Hãy liên hệ với tôi ngay!",
+        name: "Họ và tên",
+        email: "Địa chỉ Email",
+        subject: "Tiêu đề",
+        message: "Nội dung tin nhắn",
+        send: "Gửi tin nhắn",
+        sending: "Đang gửi...",
+        success: "Gửi tin nhắn thành công!",
+        socials: "Theo dõi tôi tại",
     },
     about: {
         badge: "✦ Về tôi",

@@ -17,14 +17,19 @@ export default function Layout({ children, title, description, thumbnailUrl, url
                     <link rel="manifest" href="/site.webmanifest" />
                     <meta
                         name="description"
-                        content="Portfolio của Nguyễn Văn Minh — Full-Stack Web Developer tại Hà Nội. Chuyên PHP/Laravel, React, Next.js và Node.js."
+                        content="Professional Portfolio of Nguyễn Văn Minh — Senior Full-Stack Web Developer in Hanoi. Expert in PHP/Laravel, React, Next.js, and Node.js with 6+ years of experience."
                     />
-                    <meta property="og:image" content="./ChatGPT Image 11_54_38 22 thg 4, 2026.png" />
-                    <meta property="og:title" content="Minh Nguyen — Full-Stack Developer" />
+                    <meta property="og:type" content="website" />
+                    <meta property="og:image" content="/ChatGPT Image 11_54_38 22 thg 4, 2026.png" />
+                    <meta property="og:title" content="Nguyễn Văn Minh — Senior Full-Stack Web Developer" />
                     <meta
                         property="og:description"
-                        content="Portfolio của Nguyễn Văn Minh — Full-Stack Web Developer tại Hà Nội."
+                        content="High-performance web applications built with modern technologies. Check out my work and journey."
                     />
+                    <meta name="twitter:card" content="summary_large_image" />
+                    <meta name="twitter:title" content="Nguyễn Văn Minh — Senior Full-Stack Web Developer" />
+                    <meta name="twitter:description" content="Senior Full-Stack Developer specializing in PHP/Laravel and React." />
+                    <meta name="twitter:image" content="/ChatGPT Image 11_54_38 22 thg 4, 2026.png" />
                 </Head>
                 {/* Fixed Navigation */}
                 <Example />

@@ -1,24 +1,7 @@
 import Slider from "react-slick";
 import useTrans from "../src/hooks/useTrans";
 
-const projects = [
-    {
-        title: "Sim Selling Website",
-        description: "Website bán SIM được phát triển với hiệu suất cao, chuẩn SEO, phù hợp mục đích bán hàng online. Trang quản trị phát triển bằng Angular, mang đến trải nghiệm tuyệt vời cho admin.",
-        image: "../Group67.png",
-        link: "https://mobifonehanoi.vn/",
-        tags: ["Laravel", "Angular", "SEO", "MySQL", "jQuery"],
-        color: "#6c63ff",
-    },
-    {
-        title: "CRM Software",
-        description: "Phần mềm CRM giúp doanh nghiệp quản lý các hoạt động tương tác, chăm sóc với khách hàng, hình thành mối quan hệ khách hàng trung thành trong doanh nghiệp.",
-        image: "../Group68.png",
-        link: "https://bizfly.vn/giai-phap/bizfly-crm.html",
-        tags: ["Laravel", "MongoDB", "MithrilJS", "Jenkins"],
-        color: "#00d4ff",
-    },
-];
+
 
 function ArrowNext(props) {
     const { onClick } = props;
@@ -90,7 +73,7 @@ function MyProject() {
                             color: 'var(--accent-secondary)',
                         }}
                     >
-                        ✦ Portfolio
+                        {trans.myProject.featured}
                     </div>
                     <h2 className="section-title section-title-center">
                         {trans.myProject.myProject}
@@ -103,7 +86,7 @@ function MyProject() {
                 {/* Slider */}
                 <div className="relative">
                     <Slider {...settings}>
-                        {projects.map((project) => (
+                        {trans.myProject.projectsData.map((project) => (
                             <div key={project.title} className="focus:outline-none px-2">
                                 <div
                                     className="grid grid-cols-1 lg:grid-cols-5 gap-0 overflow-hidden"
@@ -131,12 +114,12 @@ function MyProject() {
 
                                     {/* Content */}
                                     <div className="lg:col-span-2 p-8 flex flex-col justify-center">
-                                        {/* Project number */}
+                                        {/* Project label */}
                                         <div
                                             className="text-xs font-semibold uppercase tracking-wider mb-3"
                                             style={{ color: 'var(--text-muted)' }}
                                         >
-                                            Featured Project
+                                            {trans.myProject.featured}
                                         </div>
 
                                         {/* Title */}
@@ -166,7 +149,7 @@ function MyProject() {
                                             rel="noopener noreferrer"
                                             className="btn-primary self-start"
                                         >
-                                            View Project
+                                            {trans.myProject.viewProject}
                                             <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                             </svg>

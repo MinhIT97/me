@@ -29,8 +29,41 @@ export default {
         companies: "Companies"
     },
     myProject: {
-        myProject: "My Projects",
-        content: "Here are some of the key projects I have worked on, showcasing my technical skills and problem-solving abilities."
+        myProject: "Featured Projects",
+        content: "A selection of my best work, including full-stack web applications and corporate software solutions.",
+        featured: "Featured Project",
+        viewProject: "View Project",
+        projectsData: [
+            {
+                title: "Sim Selling Website",
+                description: "A high-performance sim card selling website developed with SEO optimization. Admin dashboard built with Angular for a smooth management experience.",
+                image: "/Group67.png",
+                link: "https://mobifonehanoi.vn/",
+                tags: ["Laravel", "Angular", "SEO", "MySQL", "jQuery"],
+                color: "#6c63ff",
+            },
+            {
+                title: "CRM Software",
+                description: "CRM software helping businesses manage customer interactions, fostering loyalty and streamlining operations.",
+                image: "/Group68.png",
+                link: "https://bizfly.vn/giai-phap/bizfly-crm.html",
+                tags: ["Laravel", "MongoDB", "MithrilJS", "Jenkins"],
+                color: "#00d4ff",
+            },
+        ]
+    },
+    contact: {
+        badge: "✦ Get In Touch",
+        title: "Let's Work Together",
+        subtitle: "Have a project in mind or just want to say hi? Feel free to reach out!",
+        name: "Full Name",
+        email: "Email Address",
+        subject: "Subject",
+        message: "Your Message",
+        send: "Send Message",
+        sending: "Sending...",
+        success: "Message sent successfully!",
+        socials: "Follow Me",
     },
     about: {
         badge: "✦ About Me",
