@@ -1,4 +1,5 @@
 import useTrans from "../src/hooks/useTrans";
+import { motion } from "framer-motion";
 
 const technicalSkills = [
     { name: "PHP / Laravel", percent: 85, color: '#6c63ff' },
@@ -22,7 +23,23 @@ function CircularProgress({ percent, name, strokeDashoffset }: { percent: number
     const offset = circumference - (percent / 100) * circumference;
 
     return (
-        <div className="flex flex-col items-center gap-3">
+        <motion.div 
+            whileHover={{ scale: 1.05, y: -5 }}
+            className="flex flex-col items-center gap-3 p-4 rounded-2xl transition-all"
+            style={{
+                background: 'transparent',
+            }}
+            onMouseEnter={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                target.style.background = 'var(--bg-card-hover)';
+                target.style.boxShadow = 'var(--shadow-glow)';
+            }}
+            onMouseLeave={(e) => {
+                const target = e.currentTarget as HTMLElement;
+                target.style.background = 'transparent';
+                target.style.boxShadow = 'none';
+            }}
+        >
             <div className="relative" style={{ width: 110, height: 110 }}>
                 <svg viewBox="0 0 100 100" style={{ transform: 'rotate(-90deg)' }}>
                     <defs>
@@ -67,7 +84,7 @@ function CircularProgress({ percent, name, strokeDashoffset }: { percent: number
             <span className="text-sm font-medium text-center" style={{ color: 'var(--text-secondary)' }}>
                 {name}
             </span>
-        </div>
+        </motion.div>
     );
 }
 
@@ -110,7 +127,11 @@ function Skills() {
                         </h3>
                         <div className="space-y-6">
                             {technicalSkills.map((skill) => (
-                                <div key={skill.name}>
+                                <motion.div 
+                                    key={skill.name}
+                                    whileHover={{ x: 10 }}
+                                    className="p-3 rounded-xl transition-all hover:glass"
+                                >
                                     <div className="candidatos">
                                         <div className="parcial">
                                             <div className="info" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
@@ -128,7 +149,7 @@ function Skills() {
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                     </div>

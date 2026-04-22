@@ -15,18 +15,47 @@ export default function Header() {
     const [scrolled, setScrolled] = useState(false);
 
     const navLinks = [
-        { label: trans.home.home, href: "/" },
-        { label: trans.home.projects, href: "/projects" },
-        { label: trans.home.about, href: "/about" },
+        { label: trans.home.home, href: "#home", id: "home" },
+        { label: trans.home.about, href: "#about", id: "about" },
+        { label: trans.home.projects, href: "#projects", id: "projects" },
+        { label: trans.home.contact, href: "#contact", id: "contact" },
     ];
+
+    const [activeSection, setActiveSection] = useState("home");
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
         window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
+
+        // Intersection Observer for Active Section
+        const observerOptions = {
+            root: null,
+            rootMargin: '-20% 0px -70% 0px',
+            threshold: 0
+        };
+
+        const observerCallback = (entries: IntersectionObserverEntry[]) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    setActiveSection(entry.target.id);
+                }
+            });
+        };
+
+        const observer = new IntersectionObserver(observerCallback, observerOptions);
+        const sections = ["home", "about", "projects", "contact"];
+        sections.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+            observer.disconnect();
+        };
     }, []);
 
-    const isActive = (href: string) => router.pathname === href;
+    const isActive = (id: string) => activeSection === id;
 
     return (
         <header
@@ -79,32 +108,28 @@ export default function Header() {
                                 {/* Desktop Nav */}
                                 <nav className="hidden md:flex items-center gap-8">
                                     {navLinks.map((link) => (
-                                        <Link key={link.href} href={link.href}>
-                                            <a
-                                                className="relative text-sm font-medium transition-colors duration-200 py-1"
-                                                style={{
-                                                    color: isActive(link.href)
-                                                        ? 'var(--accent-primary)'
-                                                        : 'var(--text-secondary)',
-                                                }}
-                                                onMouseEnter={(e) => {
-                                                    if (!isActive(link.href))
-                                                        (e.target as HTMLElement).style.color = 'var(--text-primary)';
-                                                }}
-                                                onMouseLeave={(e) => {
-                                                    if (!isActive(link.href))
-                                                        (e.target as HTMLElement).style.color = 'var(--text-secondary)';
-                                                }}
-                                            >
-                                                {link.label}
-                                                {isActive(link.href) && (
-                                                    <span
-                                                        className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
-                                                        style={{ background: 'var(--gradient-primary)' }}
-                                                    />
-                                                )}
-                                            </a>
-                                        </Link>
+                                        <a
+                                            key={link.id}
+                                            href={link.href}
+                                            className="relative text-sm font-medium transition-colors duration-200 py-1 cursor-pointer"
+                                            style={{
+                                                color: isActive(link.id)
+                                                    ? 'var(--accent-primary)'
+                                                    : 'var(--text-secondary)',
+                                            }}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+                                            }}
+                                        >
+                                            {link.label}
+                                            {isActive(link.id) && (
+                                                <span
+                                                    className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                                                    style={{ background: 'var(--gradient-primary)' }}
+                                                />
+                                            )}
+                                        </a>
                                     ))}
 
                                     {/* Divider */}
