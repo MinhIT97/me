@@ -5,9 +5,12 @@ const FloatingBubbles = () => {
 
     useEffect(() => {
         // Generate on client side to avoid hydration mismatch
-        const newBubbles = Array.from({ length: 35 }).map((_, i) => ({
+        const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+        const count = isMobile ? 15 : 35;
+        
+        const newBubbles = Array.from({ length: count }).map((_, i) => ({
             id: i,
-            size: Math.random() * 40 + 15, // 15px to 55px
+            size: Math.random() * (isMobile ? 25 : 40) + 15, 
             left: Math.random() * 100, // 0 to 100%
             top: Math.random() * 100, // 0 to 100%
             delay: Math.random() * 5,

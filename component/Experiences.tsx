@@ -49,7 +49,7 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
                             )}
                         </div>
                     </div>
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                         {item.current && (
                             <span
                                 className="flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs font-medium"

@@ -40,7 +40,10 @@ export default function CardProject() {
                         modules={[Mousewheel, Pagination, Navigation]}
                         mousewheel={true}
                         pagination={{ clickable: true }}
-                        navigation={true}
+                        navigation={{
+                            nextEl: '.swiper-button-next',
+                            prevEl: '.swiper-button-prev',
+                        }}
                         className="mySwiper pb-12"
                     >
                         {trans.project.projectsData.map((project: any, index: number) => (
@@ -136,11 +139,25 @@ export default function CardProject() {
                             </SwiperSlide>
                         ))}
                     </Swiper>
+
+                    {/* Desktop Navigation Arrows */}
+                    <div className="hidden md:block">
+                        <div className="swiper-button-prev !text-accent-primary !w-10 !h-10 !-left-12 after:!text-xl"></div>
+                        <div className="swiper-button-next !text-accent-primary !w-10 !h-10 !-right-12 after:!text-xl"></div>
+                    </div>
                 </div>
             </div>
 
             {/* Pagination/Navigation custom styles */}
             <style jsx global>{`
+                .project-swiper-container {
+                    padding: 0 10px;
+                }
+                @media (min-width: 768px) {
+                    .project-swiper-container {
+                        padding: 0;
+                    }
+                }
                 .project-swiper-container .swiper-pagination-bullet {
                     background: var(--text-muted);
                 }
@@ -150,10 +167,15 @@ export default function CardProject() {
                 .project-swiper-container .swiper-button-next,
                 .project-swiper-container .swiper-button-prev {
                     color: var(--accent-primary);
+                    background: var(--bg-surface);
+                    border: 1px solid var(--border-subtle);
+                    border-radius: 50%;
+                    box-shadow: var(--shadow-glow);
                 }
                 .project-swiper-container .swiper-button-next:after,
                 .project-swiper-container .swiper-button-prev:after {
-                    font-size: 20px;
+                    font-size: 16px;
+                    font-weight: bold;
                 }
             `}</style>
         </div>

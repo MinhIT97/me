@@ -132,7 +132,7 @@ function About() {
 
                         {/* Info grid */}
                         <div
-                            className="grid grid-cols-2 gap-4 mb-8 p-5 rounded-2xl"
+                            className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 p-5 rounded-2xl"
                             style={{
                                 background: 'var(--bg-card)',
                                 border: '1px solid var(--border-subtle)',
@@ -150,7 +150,7 @@ function About() {
                                 <div className="text-xs font-medium uppercase tracking-wide mb-1" style={{ color: 'var(--text-muted)' }}>{trans.about.email}</div>
                                 <a
                                     href="mailto:minh0608197@gmail.com"
-                                    className="text-sm font-semibold transition-colors"
+                                    className="text-sm font-semibold transition-colors break-all"
                                     style={{ color: 'var(--accent-secondary)' }}
                                 >
                                     minh0608197@gmail.com

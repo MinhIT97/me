@@ -7,16 +7,18 @@ import Toggle from "./Toggle";
 import AudioPlayer from "./AudioPlayer";
 import useTrans from "../src/hooks/useTrans";
 
-const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Projects", href: "/projects" },
-    { label: "About", href: "/about" },
-];
+
 
 export default function Header() {
     const router = useRouter();
     const trans = useTrans();
     const [scrolled, setScrolled] = useState(false);
+
+    const navLinks = [
+        { label: trans.home.home, href: "/" },
+        { label: trans.home.projects, href: "/projects" },
+        { label: trans.home.about, href: "/about" },
+    ];
 
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -124,7 +126,7 @@ export default function Header() {
                                                 >
                                                     <img
                                                         width={22}
-                                                        src={locale === 'vi' ? './vietnam.png' : './united-kingdom.png'}
+                                                        src={locale === 'vi' ? '/vietnam.png' : '/united-kingdom.png'}
                                                         alt={locale}
                                                         style={{ borderRadius: 3 }}
                                                     />
@@ -144,7 +146,7 @@ export default function Header() {
                                         href="mailto:minh0608197@gmail.com"
                                         className="btn-primary text-sm px-5 py-2"
                                     >
-                                        Hire Me
+                                        {trans.me.hireMe}
                                     </a>
                                 </nav>
 
@@ -217,11 +219,11 @@ export default function Header() {
                                     ))}
 
                                     {/* Language flags */}
-                                    <div className="flex items-center gap-3 pt-2">
+                                    <div className="flex items-center gap-6 pt-4 px-4 border-t border-gray-800" style={{ borderColor: 'var(--border-subtle)' }}>
                                         {router.locales?.map((locale) => (
                                             <Link key={locale} href={router.asPath} locale={locale}>
-                                                <a onClick={() => close()} className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                                                    <img width={20} src={locale === 'vi' ? './vietnam.png' : './united-kingdom.png'} alt={locale} style={{ borderRadius: 2 }} />
+                                                <a onClick={() => close()} className="flex items-center gap-2 text-sm font-medium" style={{ color: router.locale === locale ? 'var(--text-primary)' : 'var(--text-muted)' }}>
+                                                    <img width={24} src={locale === 'vi' ? '/vietnam.png' : '/united-kingdom.png'} alt={locale} style={{ borderRadius: 3, opacity: router.locale === locale ? 1 : 0.6 }} />
                                                     {locale === 'vi' ? 'Tiếng Việt' : 'English'}
                                                 </a>
                                             </Link>
@@ -232,7 +234,7 @@ export default function Header() {
                                         href="mailto:minh0608197@gmail.com"
                                         className="btn-primary justify-center mt-2"
                                     >
-                                        Hire Me
+                                        {trans.me.hireMe}
                                     </a>
                                 </div>
                             </Popover.Panel>
