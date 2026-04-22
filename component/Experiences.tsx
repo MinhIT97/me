@@ -64,11 +64,6 @@ function TimelineItem({ item, index }: { item: any; index: number }) {
         <div className="timeline-item">
             <div
                 className="glass-card p-6 rounded-2xl"
-                style={{
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.07)',
-                    transition: 'all 0.3s ease',
-                }}
             >
                 {/* Header */}
                 <div className="flex flex-wrap items-start justify-between gap-3 mb-4">

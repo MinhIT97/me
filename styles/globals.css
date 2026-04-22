@@ -13,10 +13,14 @@
   /* DARK MODE Background (Default) */
   --bg-primary: #07070f;
   --bg-secondary: #0d0d1a;
-  --bg-surface: #12121f;
-  --bg-surface-2: #1a1a2e;
-  --bg-card: rgba(255, 255, 255, 0.04);
   --bg-card-hover: rgba(255, 255, 255, 0.07);
+  --bg-card-footer: rgba(255, 255, 255, 0.02);
+  --bg-header-scrolled: rgba(7, 7, 15, 0.85);
+  --bg-header-transparent: rgba(7, 7, 15, 0.4);
+  --bg-mobile-menu: rgba(7, 7, 15, 0.95);
+  --bg-tech-icon: rgba(18, 18, 31, 0.9);
+  --bg-badge: rgba(108, 99, 255, 0.12);
+  --border-badge: rgba(108, 99, 255, 0.25);
 
   /* Accent Colors */
   --accent-primary: #6c63ff;
@@ -67,10 +71,14 @@
   /* LIGHT MODE Background */
   --bg-primary: #f8fafc;
   --bg-secondary: #ffffff;
-  --bg-surface: #f1f5f9;
-  --bg-surface-2: #e2e8f0;
-  --bg-card: rgba(0, 0, 0, 0.03);
   --bg-card-hover: rgba(0, 0, 0, 0.06);
+  --bg-card-footer: rgba(0, 0, 0, 0.02);
+  --bg-header-scrolled: rgba(255, 255, 255, 0.85);
+  --bg-header-transparent: rgba(255, 255, 255, 0.4);
+  --bg-mobile-menu: rgba(255, 255, 255, 0.95);
+  --bg-tech-icon: rgba(255, 255, 255, 0.9);
+  --bg-badge: rgba(79, 70, 229, 0.1);
+  --border-badge: rgba(79, 70, 229, 0.2);
 
   /* Accent Colors */
   --accent-primary: #4f46e5;
@@ -354,7 +362,7 @@ a {
   height: 6px;
   margin: 28px 0 4px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--border-subtle);
   overflow: hidden;
 }
 
@@ -415,7 +423,7 @@ a {
 }
 
 .mh-progress path:nth-child(1) {
-  stroke: rgba(255, 255, 255, 0.06);
+  stroke: var(--border-subtle);
 }
 
 .mh-progress path:nth-child(2) {
@@ -455,6 +463,13 @@ a {
 /* ============================================
    ANIMATIONS
    ============================================ */
+@keyframes floatBubble {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(20px, -40px) scale(1.05); }
+  50% { transform: translate(-20px, -80px) scale(0.95); }
+  75% { transform: translate(-40px, -30px) scale(1.02); }
+}
+
 @keyframes fadeInUp {
   from {
     opacity: 0;

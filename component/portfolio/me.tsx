@@ -11,6 +11,7 @@ import figma from '../../public/figma.png';
 import nestjs from '../../public/nestjs.png';
 import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
+import FloatingBubbles from "../FloatingBubbles";
 
 const calculateYearsDifference = () => {
     const startDate = new Date(2019, 10);
@@ -132,12 +133,7 @@ function Me() {
                 />
             </div>
 
-            {/* Grid Pattern Overlay */}
-            <div className="absolute inset-0 opacity-5" style={{
-                backgroundImage: 'linear-gradient(rgba(108,99,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(108,99,255,0.5) 1px, transparent 1px)',
-                backgroundSize: '60px 60px',
-                zIndex: 0,
-            }} />
+            <FloatingBubbles />
 
             <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 hero-content">
                 <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center min-h-screen pt-20 pb-16">
@@ -148,8 +144,8 @@ function Me() {
                         <div
                             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full mb-6 text-sm font-medium"
                             style={{
-                                background: 'rgba(108, 99, 255, 0.12)',
-                                border: '1px solid rgba(108, 99, 255, 0.25)',
+                                background: 'var(--bg-badge)',
+                                border: '1px solid var(--border-badge)',
                                 color: 'var(--accent-secondary)',
                             }}
                         >
@@ -245,7 +241,8 @@ function Me() {
                             style={{
                                 width: 380,
                                 height: 380,
-                                background: 'radial-gradient(circle, rgba(108,99,255,0.15) 0%, transparent 70%)',
+                                background: 'radial-gradient(circle, var(--accent-primary) 0%, transparent 70%)',
+                                opacity: 0.15,
                                 animation: 'pulse-glow 4s ease-in-out infinite',
                             }}
                         />
@@ -257,9 +254,9 @@ function Me() {
                                 width: 320,
                                 height: 380,
                                 borderRadius: '50% 50% 40% 40% / 60% 60% 40% 40%',
-                                background: 'linear-gradient(160deg, rgba(108,99,255,0.2) 0%, rgba(0,212,255,0.15) 100%)',
-                                border: '1px solid rgba(108, 99, 255, 0.3)',
-                                boxShadow: '0 0 60px rgba(108, 99, 255, 0.2), inset 0 0 60px rgba(108, 99, 255, 0.05)',
+                                background: 'var(--gradient-card)',
+                                border: '1px solid var(--border-accent)',
+                                boxShadow: 'var(--shadow-glow-strong)',
                             }}
                         >
                             <Image
@@ -282,8 +279,8 @@ function Me() {
                                     ...icon.style,
                                     width: 56,
                                     height: 56,
-                                    background: 'rgba(18, 18, 31, 0.9)',
-                                    border: '1px solid rgba(108, 99, 255, 0.25)',
+                                    background: 'var(--bg-tech-icon)',
+                                    border: '1px solid var(--border-accent)',
                                     backdropFilter: 'blur(10px)',
                                     WebkitBackdropFilter: 'blur(10px)',
                                     boxShadow: '0 4px 20px rgba(0,0,0,0.4)',

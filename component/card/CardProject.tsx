@@ -154,7 +154,7 @@ export default function CardProject() {
                                     </div>
 
                                     {/* Bottom Info */}
-                                    <div className="p-6" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                                    <div className="p-6" style={{ background: 'var(--bg-card-footer)' }}>
                                         <div className="flex items-center gap-3 mb-3">
                                             <div style={{ color: 'var(--accent-primary)' }}><Building width={18} /></div>
                                             <div className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>{project.company}</div>
@@ -184,8 +184,8 @@ export default function CardProject() {
                                                         key={tech} 
                                                         className="px-2 py-1 rounded text-xs font-medium"
                                                         style={{ 
-                                                            background: 'rgba(108, 99, 255, 0.1)', 
-                                                            border: '1px solid rgba(108, 99, 255, 0.2)',
+                                                            background: 'var(--bg-badge)', 
+                                                            border: '1px solid var(--border-badge)',
                                                             color: 'var(--text-secondary)'
                                                         }}
                                                     >

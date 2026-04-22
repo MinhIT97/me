@@ -35,7 +35,7 @@ function CircularProgress({ percent, name, strokeDashoffset }: { percent: number
                     <path
                         d="M 50,50 m 0,-47.5 a 47.5,47.5 0 1 1 0,95 a 47.5,47.5 0 1 1 0,-95"
                         fill="none"
-                        stroke="rgba(255,255,255,0.06)"
+                        stroke="var(--border-subtle)"
                         strokeWidth="6"
                     />
                     {/* Progress arc */}
@@ -83,8 +83,8 @@ function Skills() {
                     <div
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4 text-xs font-semibold tracking-wider uppercase"
                         style={{
-                            background: 'rgba(108, 99, 255, 0.1)',
-                            border: '1px solid rgba(108, 99, 255, 0.2)',
+                            background: 'var(--bg-badge)',
+                            border: '1px solid var(--border-badge)',
                             color: 'var(--accent-secondary)',
                         }}
                     >

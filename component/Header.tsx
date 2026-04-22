@@ -31,8 +31,8 @@ export default function Header() {
             className="fixed z-50 w-full top-0 left-0 transition-all duration-300"
             style={{
                 background: scrolled
-                    ? 'rgba(7, 7, 15, 0.85)'
-                    : 'rgba(7, 7, 15, 0.4)',
+                    ? 'var(--bg-header-scrolled)'
+                    : 'var(--bg-header-transparent)',
                 backdropFilter: 'blur(20px)',
                 WebkitBackdropFilter: 'blur(20px)',
                 borderBottom: scrolled
@@ -185,7 +185,7 @@ export default function Header() {
                                 static
                                 className="absolute w-full top-full left-0"
                                 style={{
-                                    background: 'rgba(7, 7, 15, 0.95)',
+                                    background: 'var(--bg-mobile-menu)',
                                     backdropFilter: 'blur(20px)',
                                     WebkitBackdropFilter: 'blur(20px)',
                                     borderBottom: '1px solid var(--border-subtle)',

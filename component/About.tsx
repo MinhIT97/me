@@ -52,11 +52,10 @@ function About() {
                                 className="w-full h-auto object-cover"
                                 style={{ display: 'block' }}
                             />
-                            {/* Image overlay gradient */}
                             <div
                                 className="absolute inset-0"
                                 style={{
-                                    background: 'linear-gradient(to top, rgba(7,7,15,0.5) 0%, transparent 50%)',
+                                    background: 'linear-gradient(to top, var(--bg-secondary) 0%, transparent 50%)',
                                 }}
                             />
                         </div>
@@ -65,8 +64,8 @@ function About() {
                         <div
                             className="absolute -bottom-5 -right-5 glass-card p-4 rounded-2xl z-10"
                             style={{
-                                background: 'rgba(18, 18, 31, 0.9)',
-                                border: '1px solid rgba(108, 99, 255, 0.25)',
+                                background: 'var(--bg-tech-icon)',
+                                border: '1px solid var(--border-accent)',
                                 backdropFilter: 'blur(16px)',
                                 WebkitBackdropFilter: 'blur(16px)',
                             }}
@@ -95,8 +94,8 @@ function About() {
                         <div
                             className="inline-flex items-center gap-2 px-3 py-1 rounded-full mb-4 text-xs font-semibold tracking-wider uppercase"
                             style={{
-                                background: 'rgba(108, 99, 255, 0.1)',
-                                border: '1px solid rgba(108, 99, 255, 0.2)',
+                                background: 'var(--bg-badge)',
+                                border: '1px solid var(--border-badge)',
                                 color: 'var(--accent-secondary)',
                             }}
                         >

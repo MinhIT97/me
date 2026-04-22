@@ -107,8 +107,8 @@ function Footer() {
                                 }}
                                 onMouseEnter={(e) => {
                                     const el = e.currentTarget;
-                                    el.style.background = 'rgba(108, 99, 255, 0.15)';
-                                    el.style.borderColor = 'rgba(108, 99, 255, 0.3)';
+                                    el.style.background = 'var(--bg-badge)';
+                                    el.style.borderColor = 'var(--border-accent)';
                                     el.style.color = 'var(--accent-primary)';
                                     el.style.transform = 'translateY(-3px)';
                                 }}
