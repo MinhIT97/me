@@ -18,44 +18,82 @@ export default function CardAbout() {
     const yearsDifference = calculateYearsDifference();
     return (
         <>
-            <div className="card-product">
-                <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                    <div className="px-6 py-4 pb-0">
-                        <div className="font-bold text-base text-gray-600">
-                            Nguyễn Văn Minh
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <FootPrint width={20} />
-                            <div className=" text-base text-gray-600 ">06/08/1997 ({yearsDifference})</div>
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <Graduation width={20} />
-                            <div className="font-bold text-base text-gray-600">Trường Đại học Mỏ – Địa chất (Hanoi University of Mining and Geology)</div>
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <Passion width={20} />
-                            <div className=" text-base text-gray-600 ">Software Technology</div>
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <div className="font-bold text-base text-gray-600">
-                                Confers:
+            <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', paddingTop: 100, paddingBottom: 60 }}>
+                <div className="max-w-2xl mx-auto px-6">
+                    <div
+                        className="rounded-2xl overflow-hidden"
+                        style={{
+                            background: 'var(--bg-surface)',
+                            border: '1px solid var(--border-subtle)',
+                            boxShadow: 'var(--shadow-card)',
+                        }}
+                    >
+                        {/* Header bar */}
+                        <div
+                            style={{
+                                background: 'var(--gradient-primary)',
+                                height: 6,
+                            }}
+                        />
+                        <div className="px-8 py-8">
+                            <div
+                                className="text-2xl font-bold mb-6"
+                                style={{
+                                    fontFamily: 'var(--font-heading)',
+                                    background: 'var(--gradient-text)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                }}
+                            >
+                                Nguyễn Văn Minh
                             </div>
-                            <div className=" text-base text-gray-600 ">The degree of engineer</div>
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <GPA width={20} />
-                            <div className=" text-base text-gray-600 ">2.42</div>
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <Email width={20} />
-                            <div className=" text-base text-gray-600 ">minh06081997@gmail.com</div>
-                        </div>
-                        <div className="flex space-x-2 items-center mb-2">
-                            <Gender width={20} />
-                            <div className=" text-base text-gray-600 ">Nam</div>
+
+                            {[{
+                                icon: <FootPrint width={18} />,
+                                label: 'Date of Birth',
+                                value: `06/08/1997 (${yearsDifference} tuổi)`,
+                            }, {
+                                icon: <Graduation width={18} />,
+                                label: 'University',
+                                value: 'Trường Đại học Mỏ – Địa chất (HUMG)',
+                            }, {
+                                icon: <Passion width={18} />,
+                                label: 'Specialization',
+                                value: 'Software Technology',
+                            }, {
+                                icon: <GPA width={18} />,
+                                label: 'Graduation GPA',
+                                value: '2.42 / 4.0',
+                            }, {
+                                icon: <Email width={18} />,
+                                label: 'Email',
+                                value: 'minh0608197@gmail.com',
+                            }, {
+                                icon: <Gender width={18} />,
+                                label: 'Gender',
+                                value: 'Nam',
+                            }].map((item, i) => (
+                                <div
+                                    key={i}
+                                    className="flex items-center gap-4 py-3"
+                                    style={{ borderBottom: '1px solid var(--border-subtle)' }}
+                                >
+                                    <div style={{ color: 'var(--accent-primary)', flexShrink: 0 }}>
+                                        {item.icon}
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="text-xs font-medium mb-0.5" style={{ color: 'var(--text-muted)' }}>
+                                            {item.label}
+                                        </div>
+                                        <div className="text-sm font-semibold" style={{ color: 'var(--text-primary)' }}>
+                                            {item.value}
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
                         </div>
                     </div>
-
                 </div>
             </div>
         </>

@@ -1,28 +1,32 @@
 import Head from "next/head";
-import "tailwindcss/tailwind.css";
-import Example from "../component/Header";
-import CoppyRight from "../component/copyright";
-
-import styles from "../styles/Home.module.scss";
-import useTrans from "../src/hooks/useTrans";
-import Me from "../component/portfolio/me";
-import Layout from "../component/layout/layout";
 import { ReactElement } from "react";
+import "tailwindcss/tailwind.css";
+
+import Layout from "../component/layout/layout";
+import Me from "../component/portfolio/me";
+import About from "../component/About";
+import Skills from "../component/Skills";
+import Experiences from "../component/Experiences";
+import MyProject from "../component/MyProject";
 
 function Home() {
-  const trans = useTrans();
   return (
-    <div>
+    <div className="bg-portfolio-bg text-portfolio-200">
       <Me />
+      <About />
+      <Skills />
+      <Experiences />
+      <MyProject />
     </div>
   );
 }
+
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
-    <Layout title="Home" >
+    <Layout>
       {page}
     </Layout>
   )
 }
 
-export default Home
+export default Home;

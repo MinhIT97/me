@@ -1,24 +1,24 @@
 import { ReactElement } from "react";
-import Example from "../component/Header";
 import Layout from "../component/layout/layout";
-import styles from "../styles/Home.module.scss";
-import CardProject from '../component/card/CardProject';
+import MyProject from "../component/MyProject";
+import CardProject from "../component/card/CardProject";
 
 function Project() {
     return (
-
-
-        <CardProject />
-
+        <div className="bg-portfolio-bg text-portfolio-200">
+            <div className="pt-20">
+                <CardProject />
+            </div>
+        </div>
     )
 }
 
 Project.getLayout = function getLayout(page: ReactElement) {
     return (
-        <Layout title="Home" >
+        <Layout title="Projects">
             {page}
         </Layout>
     )
 }
 
-export default Project
+export default Project;

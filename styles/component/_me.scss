@@ -1,181 +1,74 @@
-.me {
-    .info {
-        &-skills {
-            margin: auto;
-            font-size: 40px;
-            font-weight: 800;
-            &--job {
-                background-color: #5763FF;
-                color: #ffffff;
-                padding: 0.25rem 1.75rem;
-                border-radius: 1.5rem;
-                margin-left: 1.5rem;
-                font-size: 1.5rem;
-            }
-            &--description {
-                font-size: 1.5rem;
-                font-weight: 500;
-                font-family: inherit;
-            }
-        }
-        &-me {
-            background-color: #ddd1c1;
-            color: #ffffff;
-            height: calc(100vh - 4.375rem);
-            margin-top: 4.375rem;
-            &--skill-git {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 37%;
-                top: 15%;
-            }
-            &--skill-laravel {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 65%;
-                top: 8%;
-            }
-            &--skill-ubuntu {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 28%;
-                top: 32%;
-            }
-            &--skill-mysql {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 68%;
-                top: 35%;
-            }
-            &--skill-vscode {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 25%;
-                top: 50%;
-            }
-            &--skill-nextjs {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 70%;
-                top: 50%;
-            }
-            &--skill-figma {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 30%;
-                top: 65%;
-            }
-            &--skill-nestjs {
-                width: 60px;
-                height: 60px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                position: absolute;
-                left: 65%;
-                top: 20%;
-                transform: rotatez(23deg);
-            }
-            &--image-ball {
-                background-size: cover;
-                background: radial-gradient(circle, rgba(241, 198, 241, 0.8), rgba(142, 70, 214, 0.8));
-                box-shadow: 0 0 30px rgba(212, 119, 212, 0.9), 0 0 60px rgba(209, 121, 209, 0.9), 0 0 90px rgba(139, 74, 139, 0.9), 0 0 120px rgba(214, 123, 214, 0.9);
-                animation: glow 2s infinite alternate;
-                border-radius: 50%;
-            }
-        }
-        &-contact {
-            margin-top: 3.75rem;
-            font-size: 1.5rem;
-            font-weight: bold;
-            &--hire-me {
-                background-color: #fd481d;
-                color: #ffffff;
-                padding: 0.75rem 2.25rem;
-            }
-        }
+/* ============================================
+   HERO SECTION STYLES
+   ============================================ */
+
+.hero-section {
+    min-height: 100vh;
+    background: var(--gradient-hero);
+    position: relative;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+/* ============================================
+   FLOATING TECH ICON ANIMATIONS
+   ============================================ */
+
+/* Stagger floating for each icon */
+.hero-icon-1 { animation-delay: 0s !important; }
+.hero-icon-2 { animation-delay: 0.5s !important; }
+.hero-icon-3 { animation-delay: 1s !important; }
+.hero-icon-4 { animation-delay: 1.5s !important; }
+.hero-icon-5 { animation-delay: 2s !important; }
+.hero-icon-6 { animation-delay: 2.5s !important; }
+.hero-icon-7 { animation-delay: 3s !important; }
+.hero-icon-8 { animation-delay: 3.5s !important; }
+
+/* ============================================
+   KEYFRAMES (local to _me.scss)
+   ============================================ */
+
+@keyframes mesh-move {
+    0% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(40px, -40px) scale(1.05); }
+    66% { transform: translate(-30px, 30px) scale(0.95); }
+    100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 20px rgba(108, 99, 255, 0.3);
     }
-    .moving-element {
-        position: relative;
-        width: 100px;
-        height: 100px;
-        background-color: lightblue;
-        transition: transform 0.5s ease;
-    }
-    .moving-element:hover {
-        transform: translateX(50px);
+    50% {
+        box-shadow: 0 0 40px rgba(108, 99, 255, 0.6);
     }
 }
 
-@keyframes rotate1 {
-    0% {
-        transform: rotate(0deg) translateX(20px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateX(20px) rotate(-360deg);
-    }
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
 }
 
-@keyframes rotate2 {
-    0% {
-        transform: rotate(0deg) translateY(20px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateY(20px) rotate(-360deg);
-    }
-}
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 
-@keyframes rotate3 {
-    0% {
-        transform: rotate(0deg) translateX(-20px) rotate(0deg);
+@media (max-width: 768px) {
+    .hero-section {
+        min-height: auto;
+        padding-top: 80px;
+        padding-bottom: 60px;
     }
-    100% {
-        transform: rotate(360deg) translateX(-20px) rotate(-360deg);
-    }
-}
 
-@keyframes rotate4 {
-    0% {
-        transform: rotate(0deg) translateY(-20px) rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg) translateY(-20px) rotate(-360deg);
-    }
-}
-
-@keyframes glow {
-    0% {
-        box-shadow: 0 0 30px rgba(255, 100, 255, 0.9), 0 0 60px rgba(255, 100, 255, 0.9), 0 0 90px rgba(255, 100, 255, 0.9), 0 0 120px rgba(255, 100, 255, 0.9);
-    }
-    100% {
-        box-shadow: 0 0 40px rgba(255, 100, 255, 0.9), 0 0 80px rgba(255, 100, 255, 0.9), 0 0 120px rgba(255, 100, 255, 0.9), 0 0 160px rgba(255, 100, 255, 0.9);
+    .hero-content .grid {
+        grid-template-columns: 1fr;
     }
 }

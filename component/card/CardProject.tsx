@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Mousewheel } from 'swiper/modules';
+import { Mousewheel, Pagination, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -10,263 +10,215 @@ import Clock from "../../src/svg/Clock";
 import Skills from "../../src/svg/Skills";
 import TeamWork from "../../src/svg/TeamWork";
 
+const projects = [
+    {
+        title: "WEB BÁN HÀNG",
+        link: "https://mobifonehanoi.vn/",
+        tasks: [
+            "Tạo các module cho core của công ty.",
+            "Thiết kế database.",
+            "RESTful API.",
+            "Đẩy module lên packagist.",
+            "Sử dụng module để tạo nhanh các website."
+        ],
+        company: "VMMS",
+        period: "11/2019 - 08/2020",
+        role: "Nhân viên",
+        teamSize: 2,
+        techs: ["Laravel", "Javascript"]
+    },
+    {
+        title: "WEB CRM",
+        link: "https://bizfly.vn/giai-phap/bizfly-crm.html",
+        tasks: [
+            "Phát triển hệ thống CRM quản lý khách hàng.",
+            "Phát triển các tính năng báo cáo thống kê.",
+            "Phân quyền, Export excel, Push Notification.",
+            "Sử dụng module để tạo nhanh các website.",
+            "Mã hóa bảo mật, Send sms, Tích hợp Harvan, Kiotviet, Janco."
+        ],
+        company: "VCCorp",
+        period: "08/2020 - 06/2022",
+        role: "Nhân viên",
+        teamSize: 11,
+        techs: ["Laravel", "Javascript", "Mithril"]
+    },
+    {
+        title: "WEB HRTECH",
+        link: null,
+        tasks: [
+            "Phát triển hệ thống HRTECH quản lý ứng viên.",
+            "Xây dựng hệ thống HRTECH cho công ty Aeon Việt Nam.",
+            "Nhận yêu cầu khách hàng phân tích xây dựng chức năng.",
+            "RESTful API.",
+            "Sử dụng Vuejs để tạo website cho ứng viên và trang quản lý.",
+            "Tích hợp AI đánh giá điểm ứng viên."
+        ],
+        company: "Nissho Electronics",
+        period: "07/2022 - 05/2023",
+        role: "Nhân viên",
+        teamSize: 8,
+        techs: ["Laravel", "Javascript", "Vuejs"]
+    },
+    {
+        title: "WEB SURVEY",
+        link: null,
+        tasks: [
+            "Phát triển hệ thống quản lý tòa nhà cho UK.",
+            "Nhận yêu cầu khách hàng phân tích xây dựng chức năng.",
+            "Thiết kế database.",
+            "RESTful API."
+        ],
+        company: "Shine Vision",
+        period: "05/2023 - Hiện tại",
+        role: "Nhân viên",
+        teamSize: 10,
+        techs: ["Laravel", "Javascript"]
+    }
+];
 
 export default function CardProject() {
     const [swiperRef, setSwiperRef] = useState(null);
+
     return (
-        <>
-            <div className="card-product">
-                <div className="card-product-slide">
+        <div style={{ background: 'var(--bg-primary)', minHeight: '100vh', paddingTop: 100, paddingBottom: 60 }}>
+            <div className="max-w-7xl mx-auto px-6">
+                
+                <div className="text-center mb-12">
+                    <h2 className="section-title section-title-center">Project Details</h2>
+                    <p className="mt-4 text-base max-w-xl mx-auto" style={{ color: 'var(--text-secondary)' }}>
+                        Chi tiết các dự án và kinh nghiệm làm việc thực tế.
+                    </p>
+                </div>
+
+                <div className="relative project-swiper-container">
                     <Swiper
                         onSwiper={setSwiperRef}
-                        slidesPerView={3}
-                        centeredSlides={true}
+                        slidesPerView={1}
                         spaceBetween={30}
-                        modules={[Mousewheel]}
+                        breakpoints={{
+                            768: { slidesPerView: 2 },
+                            1024: { slidesPerView: 3 }
+                        }}
+                        modules={[Mousewheel, Pagination, Navigation]}
                         mousewheel={true}
-                        className="mySwiper"
-
+                        pagination={{ clickable: true }}
+                        navigation={true}
+                        className="mySwiper pb-12"
                     >
-                        <SwiperSlide>
-                            <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
+                        {projects.map((project, index) => (
+                            <SwiperSlide key={index} className="h-auto">
+                                <div
+                                    className="h-full flex flex-col rounded-2xl overflow-hidden transition-all duration-300"
+                                    style={{
+                                        background: 'var(--bg-surface)',
+                                        border: '1px solid var(--border-subtle)',
+                                    }}
+                                >
+                                    {/* Top Content */}
+                                    <div className="p-6 flex-grow border-b border-gray-800" style={{ borderColor: 'var(--border-subtle)' }}>
+                                        <div 
+                                            className="font-bold text-xl mb-2" 
+                                            style={{ color: 'var(--text-primary)', fontFamily: 'var(--font-heading)' }}
+                                        >
+                                            {project.title}
+                                        </div>
+                                        
+                                        {project.link && (
+                                            <div className="mb-4">
+                                                <a 
+                                                    href={project.link} 
+                                                    target="_blank" 
+                                                    rel="noreferrer"
+                                                    className="inline-flex items-center gap-1 text-sm font-medium transition-colors"
+                                                    style={{ color: 'var(--accent-secondary)' }}
+                                                >
+                                                    Đi đến website
+                                                    <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                                    </svg>
+                                                </a>
+                                            </div>
+                                        )}
 
-                                <div className="px-6 py-4 pb-0">
-                                    <div className="font-bold text-base text-gray-600">
-                                        WEB BÁN HÀNG
-                                    </div>
-                                    <div className="text-blue-400">
-                                        <a href="https://mobifonehanoi.vn/">Đi đến website</a>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>
-                                        <ul className="list-inside list-disc pl-2">
-                                            <li>
-                                                Tạo các module cho core của công ty.
-                                            </li>
-                                            <li>
-                                                Thiết kế database.
-                                            </li>
-                                            <li>
-                                                RESTful API.
-                                            </li>
-                                            <li>
-                                                Đẩy module lên packagist. <a className="text-blue-400" href="https://packagist.org/search/?query=webpress">Link tham khảo</a>
-                                            </li>
-                                            <li>
-                                                Sử dụng module để tạo nhanh các website.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <div className="px-6 py-4">
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Building width={20} />
-                                        <div className="font-bold text-base text-gray-600 ">VMMS</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Clock width={20} />
-                                        <div className=" text-sm text-gray-600 ">
-                                            11/2019 - 08-2020
+                                        <div className="mt-4">
+                                            <div className="font-semibold text-sm mb-2" style={{ color: 'var(--text-muted)' }}>Công việc:</div>
+                                            <ul className="space-y-1.5 pl-4">
+                                                {project.tasks.map((task, i) => (
+                                                    <li key={i} className="text-sm list-disc" style={{ color: 'var(--text-secondary)' }}>
+                                                        {task}
+                                                    </li>
+                                                ))}
+                                            </ul>
                                         </div>
                                     </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Programer width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">Nhân viên</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-end mb-2">
-                                        <TeamWork width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">2</div>
-                                    </div>
 
-                                    <div className="flex space-x-2">
-                                        <Skills width={20} />
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">
-                                            <a href="https://laravel.com/" target="_blank">Laravel</a>
-                                        </span>
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Javascript</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <div className="px-6 py-4 pb-0">
-                                    <div className="font-bold text-base text-gray-600">
-                                        WEB CRM
-                                    </div>
-                                    <div className="text-blue-400">
-                                        <a href="https://bizfly.vn/giai-phap/bizfly-crm.html">Đi đến website</a>
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>
-                                        <ul className="list-inside list-disc pl-2">
-                                            <li>
-                                                Phát triển hệ thống CRM quản lý khách hàng.
-                                            </li>
-                                            <li>
-                                                Phát  triển các tính năng  báo cáo thống kê.
-                                            </li>
-                                            <li>
-                                                Phân quyền, Export excel, Push Notification.
-                                            </li>
-                                            <li>
-                                                Sử dụng module để tạo nhanh các website.
-                                            </li>
-                                            <li>
-                                                Mã hóa bảo mật, Send sms, Tích hợp Harvan, Kiotviet, Janco.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="px-6 py-4">
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Building width={20} />
-                                        <div className="font-bold text-base text-gray-600 ">VCCorp</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Clock width={20} />
-                                        <div className=" text-sm text-gray-600 ">
-                                            08/2020 - 06/2022
+                                    {/* Bottom Info */}
+                                    <div className="p-6" style={{ background: 'rgba(255,255,255,0.02)' }}>
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <div style={{ color: 'var(--accent-primary)' }}><Building width={18} /></div>
+                                            <div className="font-semibold text-sm" style={{ color: 'var(--text-primary)' }}>{project.company}</div>
                                         </div>
-                                    </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Programer width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">Nhân viên</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-end mb-2">
-                                        <TeamWork width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">11</div>
-                                    </div>
-                                    <div className="flex space-x-2">
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">
-                                            <a href="https://laravel.com/" target="_blank">Laravel</a>
-                                        </span>
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Javascript</span>
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">
-                                            <a href="https://mithril.js.org/" target="_blank" >Mithril</a>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <div className="px-6 py-4 pb-0">
-                                    <div className="font-bold text-base text-gray-600">
-                                        WEB HRTECH
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>
-                                        <ul className="list-inside list-disc pl-2">
-                                            <li>
-                                                Phát triển hệ thống HRTECH quản lý ứng viên
-                                            </li>
-                                            <li>
-                                                Xây dựng hệ thống HRTECH cho công ty Aeon Việt Nam
-                                            </li>
-                                            <li>
-                                                Nhận yêu cầu khách hàng phân tích xây dựng chức năng.
-                                            </li>
-                                            <li>
-                                                RESTful API.
-                                            </li>
-                                            <li>
-                                                Sử dụng Vuejs để tạo website cho ứng viên và trang quản lý.
-                                            </li>
-                                            <li>
-                                                Tích hợp AI đánh giá điểm ứng viên.
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="px-6 py-4">
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Building width={20} />
-                                        <div className="font-bold text-base text-gray-600 ">Nissho Electronics</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Clock width={20} />
-                                        <div className=" text-sm text-gray-600 ">
-                                            07/2022 - 05-2023
+                                        
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <div style={{ color: 'var(--accent-primary)' }}><Clock width={18} /></div>
+                                            <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>{project.period}</div>
                                         </div>
-                                    </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Programer width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">Nhân viên</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-end mb-2">
-                                        <TeamWork width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">8</div>
-                                    </div>
-                                    <div className="flex space-x-2">
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">
-                                            <a href="https://laravel.com/" target="_blank">Laravel</a>
-                                        </span>
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Javascript</span>
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Vuejs</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </SwiperSlide>
-                        <SwiperSlide>
-                            <div className=" rounded-2xl overflow-hidden shadow-lg bg-white">
-                                <div className="px-6 py-4 pb-0">
-                                    <div className="font-bold text-base text-gray-600">
-                                        WEB SURVEY
-                                    </div>
-                                    <div>
-                                        <div className="font-bold text-base text-gray-600 ">   Công việc :</div>
-                                        <ul className="list-inside list-disc pl-2">
-                                            <li>
-                                                Phát triển hệ thống quản lý tòa nhà cho UK
-                                            </li>
-                                            <li>
-                                                Nhận yêu cầu khách hàng phân tích xây dựng chức năng.
-                                            </li>
-                                            <li>
-                                                Thiết kế database.
-                                            </li>
-                                            <li>
-                                                RESTful API.
-                                            </li>
+                                        
+                                        <div className="flex items-center gap-3 mb-3">
+                                            <div style={{ color: 'var(--accent-primary)' }}><Programer width={18} /></div>
+                                            <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>{project.role}</div>
+                                        </div>
+                                        
+                                        <div className="flex items-center gap-3 mb-4">
+                                            <div style={{ color: 'var(--accent-primary)' }}><TeamWork width={18} /></div>
+                                            <div className="text-sm" style={{ color: 'var(--text-secondary)' }}>Team size: {project.teamSize}</div>
+                                        </div>
 
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div className="px-6 py-4">
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Building width={20} />
-                                        <div className="font-bold text-base text-gray-600 ">Shine Vision</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Clock width={20} />
-                                        <div className=" text-sm text-gray-600 ">
-                                            05/2023 - Hiện tại
+                                        {/* Tech tags */}
+                                        <div className="flex items-start gap-3 mt-4 pt-4" style={{ borderTop: '1px solid var(--border-subtle)' }}>
+                                            <div style={{ color: 'var(--accent-primary)', marginTop: '2px' }}><Skills width={18} /></div>
+                                            <div className="flex flex-wrap gap-2">
+                                                {project.techs.map(tech => (
+                                                    <span 
+                                                        key={tech} 
+                                                        className="px-2 py-1 rounded text-xs font-medium"
+                                                        style={{ 
+                                                            background: 'rgba(108, 99, 255, 0.1)', 
+                                                            border: '1px solid rgba(108, 99, 255, 0.2)',
+                                                            color: 'var(--text-secondary)'
+                                                        }}
+                                                    >
+                                                        {tech}
+                                                    </span>
+                                                ))}
+                                            </div>
                                         </div>
                                     </div>
-                                    <div className="flex space-x-2 items-center mb-2">
-                                        <Programer width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">Nhân viên</div>
-                                    </div>
-                                    <div className="flex space-x-2 items-end mb-2">
-                                        <TeamWork width={20} />
-                                        <div className="font-bold text-xs text-gray-600 ">10</div>
-                                    </div>
-                                    <div className="flex space-x-2">
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">
-                                            <a href="https://laravel.com/" target="_blank">Laravel</a>
-                                        </span>
-                                        <span className="inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-gray-400 ring-inset ring-gray-500/10">Javascript</span>
-                                    </div>
                                 </div>
-                            </div>
-                        </SwiperSlide>
+                            </SwiperSlide>
+                        ))}
                     </Swiper>
-                </div></div>
+                </div>
+            </div>
 
-
-
-        </>
-    )
+            {/* Pagination/Navigation custom styles */}
+            <style jsx global>{`
+                .project-swiper-container .swiper-pagination-bullet {
+                    background: var(--text-muted);
+                }
+                .project-swiper-container .swiper-pagination-bullet-active {
+                    background: var(--accent-primary);
+                }
+                .project-swiper-container .swiper-button-next,
+                .project-swiper-container .swiper-button-prev {
+                    color: var(--accent-primary);
+                }
+                .project-swiper-container .swiper-button-next:after,
+                .project-swiper-container .swiper-button-prev:after {
+                    font-size: 20px;
+                }
+            `}</style>
+        </div>
+    );
 }

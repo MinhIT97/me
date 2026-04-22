@@ -1,265 +1,245 @@
-/* This example requires Tailwind CSS v2.0+ */
-import { Fragment } from "react";
-import CoppyRight from "./copyright";
-import FindMe from "./FIndMe";
+import { Fragment, useEffect, useState } from "react";
 import { Popover, Transition } from "@headlessui/react";
+import { MenuIcon, XIcon } from "@heroicons/react/outline";
 import Link from "next/link";
-import {
-    BookmarkAltIcon,
-    CalendarIcon,
-    ChartBarIcon,
-    CursorClickIcon,
-    MenuIcon,
-    PhoneIcon,
-    PlayIcon,
-    RefreshIcon,
-    ShieldCheckIcon,
-    SupportIcon,
-    ViewGridIcon,
-    XIcon,
-} from "@heroicons/react/outline";
-import { ChevronDownIcon } from "@heroicons/react/solid";
 import { useRouter } from "next/router";
-import FlagVietNam from "../src/svg/FlagVietNam";
-import useTrans from "../src/hooks/useTrans";
 import Toggle from "./Toggle";
 import AudioPlayer from "./AudioPlayer";
+import useTrans from "../src/hooks/useTrans";
 
-const solutions = [
-    {
-        name: "Analytics",
-        description:
-            "Get a better understanding of where your traffic is coming from.",
-        href: "#",
-        icon: ChartBarIcon,
-    },
-    {
-        name: "Engagement",
-        description: "Speak directly to your customers in a more meaningful way.",
-        href: "#",
-        icon: CursorClickIcon,
-    },
-    {
-        name: "Security",
-        description: "Your customers' data will be safe and secure.",
-        href: "#",
-        icon: ShieldCheckIcon,
-    },
-    {
-        name: "Integrations",
-        description: "Connect with third-party tools that you're already using.",
-        href: "#",
-        icon: ViewGridIcon,
-    },
-    {
-        name: "Automations",
-        description:
-            "Build strategic funnels that will drive your customers to convert",
-        href: "#",
-        icon: RefreshIcon,
-    },
-];
-const callsToAction = [
-    { name: "Watch Demo", href: "#", icon: PlayIcon },
-    { name: "Contact Sales", href: "#", icon: PhoneIcon },
-];
-const resources = [
-    {
-        name: "Help Center",
-        description:
-            "Get all of your questions answered in our forums or contact support.",
-        href: "#",
-        icon: SupportIcon,
-    },
-    {
-        name: "Guides",
-        description:
-            "Learn how to maximize our platform to get the most out of it.",
-        href: "#",
-        icon: BookmarkAltIcon,
-    },
-    {
-        name: "Events",
-        description:
-            "See what meet-ups and other events we might be planning near you.",
-        href: "#",
-        icon: CalendarIcon,
-    },
-    {
-        name: "Security",
-        description: "Understand how we take your privacy seriously.",
-        href: "#",
-        icon: ShieldCheckIcon,
-    },
-];
-const recentPosts = [
-    { id: 1, name: "Boost your conversion rate", href: "#" },
-    {
-        id: 2,
-        name: "How to use search engine optimization to drive traffic to your site",
-        href: "#",
-    },
-    { id: 3, name: "Improve your customer experience", href: "#" },
+const navLinks = [
+    { label: "Home", href: "/" },
+    { label: "Projects", href: "/projects" },
+    { label: "About", href: "/about" },
 ];
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(" ");
-}
-
-export default function Example() {
+export default function Header() {
     const router = useRouter();
     const trans = useTrans();
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => setScrolled(window.scrollY > 20);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
+
+    const isActive = (href: string) => router.pathname === href;
 
     return (
-        <div className="fixed z-10 bg-white w-full top-0 p-3 md:p-0  dark:bg-darkCustom-100 dark:text-white shadow-sm">
-            <Popover className="relative ">
-                {({ open }) => (
+        <header
+            className="fixed z-50 w-full top-0 left-0 transition-all duration-300"
+            style={{
+                background: scrolled
+                    ? 'rgba(7, 7, 15, 0.85)'
+                    : 'rgba(7, 7, 15, 0.4)',
+                backdropFilter: 'blur(20px)',
+                WebkitBackdropFilter: 'blur(20px)',
+                borderBottom: scrolled
+                    ? '1px solid rgba(108, 99, 255, 0.15)'
+                    : '1px solid transparent',
+                boxShadow: scrolled ? '0 4px 30px rgba(0,0,0,0.4)' : 'none',
+            }}
+        >
+            <Popover className="relative">
+                {({ open, close }) => (
                     <>
-                        <div className="max-w-screen-2xl  mx-auto ">
-                            <div className="flex justify-between items-center py-3 md:py-6 md:justify-start md:space-x-10 ">
-                                <div className="flex justify-start lg:w-0 lg:flex-1">
-                                    <span className="uppercase font-sans font-semibold text-xl">
-                                        <Link href="/">
-                                            Minh Nguyen
-                                        </Link>
-                                    </span>
-                                </div>
-                                <div className="-mr-2 -my-2 md:hidden">
-                                    <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400  focus:outline-none">
-                                        <span className="sr-only">Open menu</span>
-                                        <MenuIcon
-                                            className="h-6 w-6 focus:outline-none "
-                                            aria-hidden="true"
+                        <div className="max-w-7xl mx-auto px-6 md:px-10">
+                            <div className="flex justify-between items-center h-16 md:h-20">
+                                {/* Logo */}
+                                <Link href="/">
+                                    <a className="flex items-center gap-2 group">
+                                        <img
+                                            src="/ChatGPT Image 11_54_38 22 thg 4, 2026.png"
+                                            alt="Minh Nguyen"
+                                            className="w-9 h-9 rounded-full object-cover"
+                                            style={{
+                                                border: '2px solid transparent',
+                                                background: 'var(--gradient-primary)',
+                                                padding: '1px'
+                                            }}
                                         />
-                                    </Popover.Button>
-                                </div>
-                                <Popover.Group as="nav" className="hidden md:flex space-x-10 ">
-                                    <Link href="/">
-                                        <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
-                                            <b>{trans.home.home}</b>
-                                        </a>
-                                    </Link>
-                                    <Link href="/projects">
-                                        <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
-                                            <b> {trans.home.projects}</b>
-                                        </a>
-                                    </Link>
-                                    <Link href="/about">
-                                        <a className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white">
-                                            <b> {trans.home.about}</b>
-                                        </a>
-                                    </Link>
-                                    {/* <a
-                                        href="#services"
-                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
-                                    >
-                                        <b> {trans.home.services}</b>
-                                    </a> */}
-                                    {/* <a
-                                        href="#contact"
-                                        className="text-base font-medium text-dark-1100 hover:text-gray-900 dark:text-white"
-                                    >
-                                        <b>{trans.home.contact}</b>
-                                    </a> */}
-                                    <div className="flex space-x-2 languageToggleDesktop">
-                                        {router.locales.map((locale) => (
-                                            <div key={locale}>
-                                                <Link href={router.asPath} locale={locale}>
-                                                    <a className="flex gap-2">
-                                                        {" "}
-                                                        {locale == "vi" ? (
-                                                            <img width={25} src="./vietnam.png" alt="" />
-                                                        ) : (
-                                                            <img
-                                                                width={23}
-                                                                src="./united-kingdom.png"
-                                                                alt=""
-                                                            />
-                                                        )}
-                                                    </a>
-                                                </Link>
-                                            </div>
+                                        <span
+                                            className="text-lg font-bold hidden sm:block"
+                                            style={{
+                                                fontFamily: 'var(--font-heading)',
+                                                background: 'var(--gradient-text)',
+                                                WebkitBackgroundClip: 'text',
+                                                WebkitTextFillColor: 'transparent',
+                                                backgroundClip: 'text',
+                                            }}
+                                        >
+                                            Minh Nguyen
+                                        </span>
+                                    </a>
+                                </Link>
+
+                                {/* Desktop Nav */}
+                                <nav className="hidden md:flex items-center gap-8">
+                                    {navLinks.map((link) => (
+                                        <Link key={link.href} href={link.href}>
+                                            <a
+                                                className="relative text-sm font-medium transition-colors duration-200 py-1"
+                                                style={{
+                                                    color: isActive(link.href)
+                                                        ? 'var(--accent-primary)'
+                                                        : 'var(--text-secondary)',
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    if (!isActive(link.href))
+                                                        (e.target as HTMLElement).style.color = 'var(--text-primary)';
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    if (!isActive(link.href))
+                                                        (e.target as HTMLElement).style.color = 'var(--text-secondary)';
+                                                }}
+                                            >
+                                                {link.label}
+                                                {isActive(link.href) && (
+                                                    <span
+                                                        className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full"
+                                                        style={{ background: 'var(--gradient-primary)' }}
+                                                    />
+                                                )}
+                                            </a>
+                                        </Link>
+                                    ))}
+
+                                    {/* Divider */}
+                                    <div
+                                        className="w-px h-5"
+                                        style={{ background: 'var(--border-subtle)' }}
+                                    />
+
+                                    {/* Language Toggle */}
+                                    <div className="flex items-center gap-2">
+                                        {router.locales?.map((locale) => (
+                                            <Link key={locale} href={router.asPath} locale={locale}>
+                                                <a
+                                                    className="transition-transform hover:scale-110 flex items-center"
+                                                    title={locale === 'vi' ? 'Tiếng Việt' : 'English'}
+                                                    style={{
+                                                        opacity: router.locale === locale ? 1 : 0.5,
+                                                    }}
+                                                >
+                                                    <img
+                                                        width={22}
+                                                        src={locale === 'vi' ? './vietnam.png' : './united-kingdom.png'}
+                                                        alt={locale}
+                                                        style={{ borderRadius: 3 }}
+                                                    />
+                                                </a>
+                                            </Link>
                                         ))}
                                     </div>
+
+                                    {/* Dark Mode Toggle */}
                                     <Toggle />
+
+                                    {/* Audio Player */}
                                     <AudioPlayer />
-                                </Popover.Group>
+
+                                    {/* CTA Button */}
+                                    <a
+                                        href="mailto:minh0608197@gmail.com"
+                                        className="btn-primary text-sm px-5 py-2"
+                                    >
+                                        Hire Me
+                                    </a>
+                                </nav>
+
+                                {/* Mobile Menu Button */}
+                                <div className="md:hidden flex items-center gap-3">
+                                    <Toggle />
+                                    <Popover.Button
+                                        className="p-2 rounded-lg transition-colors"
+                                        style={{
+                                            background: 'var(--bg-card)',
+                                            border: '1px solid var(--border-subtle)',
+                                            color: 'var(--text-secondary)',
+                                        }}
+                                    >
+                                        <span className="sr-only">Open menu</span>
+                                        {open ? (
+                                            <XIcon className="h-5 w-5" />
+                                        ) : (
+                                            <MenuIcon className="h-5 w-5" />
+                                        )}
+                                    </Popover.Button>
+                                </div>
                             </div>
                         </div>
 
+                        {/* Mobile Menu Panel */}
                         <Transition
                             show={open}
                             as={Fragment}
-                            enter="duration-200  ease-out"
-                            enterFrom="opacity-0 scale-95"
-                            enterTo="opacity-100 scale-100"
-                            leave="duration-100 ease-in"
-                            leaveFrom="opacity-100 scale-100"
-                            leaveTo="opacity-0 scale-95"
+                            enter="transition duration-200 ease-out"
+                            enterFrom="opacity-0 -translate-y-2"
+                            enterTo="opacity-100 translate-y-0"
+                            leave="transition duration-150 ease-in"
+                            leaveFrom="opacity-100 translate-y-0"
+                            leaveTo="opacity-0 -translate-y-2"
                         >
                             <Popover.Panel
-                                focus
                                 static
-                                className="absolute w-2/3 right-0 top-0  p-2 h-screen transition transform origin-top-right md:hidden"
+                                className="absolute w-full top-full left-0"
+                                style={{
+                                    background: 'rgba(7, 7, 15, 0.95)',
+                                    backdropFilter: 'blur(20px)',
+                                    WebkitBackdropFilter: 'blur(20px)',
+                                    borderBottom: '1px solid var(--border-subtle)',
+                                }}
                             >
-                                <div className="rounded-lg shadow-lg ring-1 h-full ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
-                                    <div className="h-full">
-                                        <div className="grid  grid-rows-4 gap-x-4g gap-y-8">
-                                            <div
-                                                className="flex justify-end pr-7 pt-4"
-                                                aria-hidden="false"
-                                            >
-                                                <Popover.Button className=" rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none ">
-                                                    <svg
-                                                        aria-hidden="false"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        className="h-6 w-6"
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                    >
-                                                        <path
-                                                            strokeLinecap="round"
-                                                            strokeLinejoin="round"
-                                                            strokeWidth={2}
-                                                            d="M6 18L18 6M6 6l12 12"
-                                                        />
-                                                    </svg>
-                                                </Popover.Button>
-                                            </div>
+                                <div className="max-w-7xl mx-auto px-6 py-6 flex flex-col gap-4">
+                                    {navLinks.map((link) => (
+                                        <Link key={link.href} href={link.href}>
                                             <a
-                                                href="#"
-                                                className="text-base m-auto font-medium text-gray-900 hover:text-gray-700"
+                                                onClick={() => close()}
+                                                className="flex items-center gap-3 py-3 px-4 rounded-xl transition-all"
+                                                style={{
+                                                    background: isActive(link.href)
+                                                        ? 'rgba(108, 99, 255, 0.12)'
+                                                        : 'transparent',
+                                                    color: isActive(link.href)
+                                                        ? 'var(--accent-primary)'
+                                                        : 'var(--text-secondary)',
+                                                    border: '1px solid',
+                                                    borderColor: isActive(link.href)
+                                                        ? 'rgba(108, 99, 255, 0.25)'
+                                                        : 'transparent',
+                                                    fontWeight: 500,
+                                                }}
                                             >
-                                                Home
+                                                {link.label}
                                             </a>
+                                        </Link>
+                                    ))}
 
-                                            <a
-                                                href="#"
-                                                className="text-base m-auto font-medium text-gray-900 hover:text-gray-700"
-                                            >
-                                                Project
-                                            </a>
-                                            <a
-                                                href="#"
-                                                className="text-base m-auto font-medium text-gray-900 hover:text-gray-700"
-                                            >
-                                                Services
-                                            </a>
-                                            <a
-                                                href="#"
-                                                className="text-base m-auto font-medium text-gray-900 hover:text-gray-700"
-                                            >
-                                                Contacts
-                                            </a>
-                                        </div>
+                                    {/* Language flags */}
+                                    <div className="flex items-center gap-3 pt-2">
+                                        {router.locales?.map((locale) => (
+                                            <Link key={locale} href={router.asPath} locale={locale}>
+                                                <a onClick={() => close()} className="flex items-center gap-2 text-sm" style={{ color: 'var(--text-secondary)' }}>
+                                                    <img width={20} src={locale === 'vi' ? './vietnam.png' : './united-kingdom.png'} alt={locale} style={{ borderRadius: 2 }} />
+                                                    {locale === 'vi' ? 'Tiếng Việt' : 'English'}
+                                                </a>
+                                            </Link>
+                                        ))}
                                     </div>
+
+                                    <a
+                                        href="mailto:minh0608197@gmail.com"
+                                        className="btn-primary justify-center mt-2"
+                                    >
+                                        Hire Me
+                                    </a>
                                 </div>
                             </Popover.Panel>
                         </Transition>
                     </>
                 )}
             </Popover>
-        </div>
+        </header>
     );
 }
