@@ -18,7 +18,6 @@ export default function Header() {
         { label: trans.home.home, href: "#home", id: "home" },
         { label: trans.home.about, href: "#about", id: "about" },
         { label: trans.home.projects, href: "#projects", id: "projects" },
-        { label: 'Blog', href: "#blog", id: "blog" },
         { label: trans.home.contact, href: "#contact", id: "contact" },
     ];
 
@@ -44,7 +43,7 @@ export default function Header() {
         };
 
         const observer = new IntersectionObserver(observerCallback, observerOptions);
-        const sections = ["home", "about", "projects", "blog", "contact"];
+        const sections = ["home", "about", "projects", "contact"];
         sections.forEach(id => {
             const el = document.getElementById(id);
             if (el) observer.observe(el);
